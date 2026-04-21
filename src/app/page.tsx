@@ -6,12 +6,16 @@ import { TextGenerate } from '@/components/textGenerate';
 
 export default function Home() {
   return (
-    <div className="bg-[#111111] div-center w-screen h-screen p-4">
+    <div className="div-center h-screen w-screen bg-[#111111] p-4">
       {/* <SocialsMenu /> */}
       {/* <Player /> */}
       {/* <SharedMenu /> */}
-      <Messages />  
-      {/* <TextGenerate /> */}
+      {/* <Messages />   */}
+      <TextGenerate
+        text={
+          'I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past, I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.'
+        }
+      />
     </div>
   );
 }

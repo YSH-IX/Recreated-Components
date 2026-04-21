@@ -146,7 +146,7 @@ export const Messages = () => {
           'ring ring-neutral-800/50',
           'group cursor-pointer',
           'duration-100 ease-out will-change-transform hover:transition-all',
-          'hover:shadow-md hover:ring-2 hover:shadow-neutral-950 hover:ring-neutral-800/90',
+          'hover:shadow-md hover:shadow-neutral-950',
           'focus:none select-none',
         )}
       >

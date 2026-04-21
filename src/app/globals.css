@@ -10,9 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-@theme {
-  --text-xs: 12px;
+  --font-instrument: var(--font-instrument)
 }
 
 .div-center {
@@ -29,5 +27,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-instrument);
 }
