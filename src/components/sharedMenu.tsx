@@ -54,11 +54,11 @@ const SharedMenu = () => {
     <div
       className={cn(
         'overflow- relative flex h-fit w-full max-w-fit flex-col items-center justify-start divide-y divide-neutral-800 rounded-4xl border border-neutral-700/70 bg-neutral-900',
-        "after:absolute after:-top-14 after:h-fit after:w-fit after:rounded-xl after:border after:border-neutral-700/80 after:bg-neutral-900 after:px-4 after:py-1.5 after:content-['Chips'] after:left-1/2 after:-translate-x-1/2",
+        "after:absolute after:-top-14 after:left-1/2 after:h-fit after:w-fit after:-translate-x-1/2 after:rounded-xl after:border after:border-neutral-700/80 after:bg-neutral-900 after:px-4 after:py-1.5 after:content-['Chips']",
       )}
     >
       {/* Chips */}
-      <div className="flex w-full items-center justify-center gap-2 p-2 text-sm font-medium text-neutral-300">
+      <div className="flex w-full items-center justify-center gap-2 p-2 text-xs font-medium text-neutral-300 sm:text-sm">
         {toggleButtons.map((item, idx) => (
           <Chip
             key={idx}
@@ -66,11 +66,10 @@ const SharedMenu = () => {
               setId(item.viewType);
             }}
             className={cn(
-              'will-change-transform',
+              'cursor-pointer will-change-transform select-none',
               id === item.viewType
-                ? 'border-green-600 bg-green-600 text-neutral-50 shadow inset-shadow-[0_1px] shadow-neutral-950 inset-shadow-white/70'
+                ? 'border-green-600  text-neutral-50 shadow inset-shadow-[0_1px] shadow-neutral-950 inset-shadow-white/60 bg-linear-to-b from-green-400 to-green-600 text-shadow'
                 : '',
-              'cursor-pointer select-none',
             )}
           >
             <item.icon
@@ -78,6 +77,7 @@ const SharedMenu = () => {
               size={20}
               className={cn(
                 id === item.viewType ? 'fill-neutral-50' : 'fill-neutral-300',
+                'size-4 sm:size-5',
               )}
             />
             <p>{item.viewType}</p>
@@ -131,7 +131,7 @@ const Chip = ({ className, children, ...rest }: ChipProps) => {
   return (
     <div
       className={cn(
-        'flex items-center gap-1 rounded-[100px] border border-neutral-700/90 py-2 pr-4 pl-3 shadow-neutral-950 transition-all duration-100 ease-out hover:shadow-sm',
+        'flex items-center gap-1 rounded-[100px] border border-neutral-700/90 py-1.5 pr-3.5 pl-2.5 shadow-neutral-950 transition-all duration-100 ease-out hover:shadow-sm sm:py-2 sm:pr-4 sm:pl-3',
         className,
       )}
       {...rest}
