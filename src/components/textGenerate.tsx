@@ -53,7 +53,7 @@ export const TextGenerate = ({ text }: compProps) => {
   };
 
   return (
-    <div className="s relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 p-8 shadow-sm shadow-neutral-950">
+    <div className="s relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 p-8 shadow-sm shadow-neutral-950 selection:bg-neutral-200 selection:text-neutral-900">
       <motion.button
         variants={{
           initial: { scale: 1 },
