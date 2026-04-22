@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { easeInOut, motion, Variants } from 'motion/react';
+import { motion, Variants } from 'motion/react';
 import { useState } from 'react';
 import { ArrowClockwiseIcon } from '@phosphor-icons/react';
 
@@ -122,7 +122,7 @@ export const Messages = () => {
     setRotation((val) => val + 360);
   };
   return (
-    <div className="relative h-fit w-fit rounded-2xl bg-[#111111] p-14 shadow-md ring shadow-neutral-950 ring-neutral-800/50">
+    <div className="relative h-fit w-fit rounded-2xl bg-background-100 p-14 shadow-md ring shadow-neutral-950 ring-neutral-800/50">
       <motion.button
         initial="initial"
         whileHover="hover"
