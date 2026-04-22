@@ -13,39 +13,39 @@ export const Messages = () => {
       sentBy: 'anakin',
       message:
         'Do you ever feel like no matter what you do, the ending was already written?',
-      dp: '/anakin.jfif',
+      dp: '/anakin.jpg',
       alt: 'anakin image',
     },
     {
       sentBy: 'paul',
       message:
         "Every day. I've seen it all. The hardest part is walking into it anyway.",
-      dp: '/paul.jfif',
+      dp: '/paul.jpg',
       alt: 'paul image',
     },
     {
       sentBy: 'me',
       message: "I didn't just walk into it. I ran.",
-      dp: '/eren.jfif',
+      dp: '/eren.jpg',
       alt: 'me image',
     },
     {
       sentBy: 'anakin',
       message:
         'I told myself it was for Padmé. But honestly... I was just angry.',
-      dp: '/anakin.jfif',
+      dp: '/anakin.jpg',
       alt: 'anakin image',
     },
     {
       sentBy: 'paul',
       message: 'Rage is easier than grief. We all know that.',
-      dp: '/paul.jfif',
+      dp: '/paul.jpg',
       alt: 'paul image',
     },
     {
       sentBy: 'me',
       message: "They'll call us villains. Fine. At least it worked.",
-      dp: '/eren.jfif',
+      dp: '/eren.jpg',
       alt: 'me image',
     },
   ];
