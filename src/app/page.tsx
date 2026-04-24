@@ -5,10 +5,12 @@ import SocialsMenu from '@/components/socialsMenu';
 import { TextGenerate } from '@/components/textGenerate';
 import { Keyboard } from '@/components/keyboard';
 import { Testimonials } from '@/components/testimonials';
+import { Hero } from '@/components/hero';
+import { ClerkCard } from '@/components/card';
 
 export default function Home() {
   return (
-    <div className="div-center bg-background-100 h-full w-full overflow-hidden p-4 sm:h-screen">
+    <div className="div-center bg-gray-100 h-full w-full overflow-hidden sm:h-screen">
       {/* <SocialsMenu /> */}
       {/* <Player /> */}
       {/* <SharedMenu /> */}
@@ -19,7 +21,9 @@ export default function Home() {
         }
       /> */}
       {/* <Keyboard /> */}
-      <Testimonials />
+      {/* <Hero /> */}
+      {/* <Testimonials /> */}
+      <ClerkCard />
     </div>
   );
 }

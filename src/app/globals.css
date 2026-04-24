@@ -7,8 +7,16 @@
 }
 @theme {
   --color-background-100: #111111;
+  --font-inter: var(--font-inter);
+  --text-xxs: 10px;
+  --text-xsm: 9px;
 }
 
 .div-center {
   @apply flex items-center justify-center;
 }
+
+.key-shadow {
+  @apply cursor-pointer shadow-[0_1px_2px_1px] inset-shadow-[0_2px_2px_0.5px] shadow-neutral-950/20 inset-shadow-neutral-50 will-change-transform active:scale-96;
+}
+

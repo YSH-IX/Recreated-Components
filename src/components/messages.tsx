@@ -6,7 +6,8 @@ import { motion, Variants } from 'motion/react';
 import { useState } from 'react';
 import { ArrowClockwiseIcon } from '@phosphor-icons/react';
 
-export const Messages = () => {
+export const
+  Messages = () => {
   const [reload, setReload] = useState(0);
   const messageList = [
     {
