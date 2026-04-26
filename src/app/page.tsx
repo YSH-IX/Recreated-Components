@@ -7,10 +7,12 @@ import { Keyboard } from '@/components/keyboard';
 import { Testimonials } from '@/components/testimonials';
 import { Hero } from '@/components/hero';
 import { ClerkCard } from '@/components/card';
+import { Dashboard } from '@/components/dashboard';
+import { Profile } from '@/components/profile';
 
 export default function Home() {
   return (
-    <div className="div-center bg-gray-100 h-full w-full overflow-hidden sm:h-screen">
+    <div className="div-center h-full w-full overflow-hidden bg-gray-100 sm:h-screen">
       {/* <SocialsMenu /> */}
       {/* <Player /> */}
       {/* <SharedMenu /> */}
@@ -23,7 +25,9 @@ export default function Home() {
       {/* <Keyboard /> */}
       {/* <Hero /> */}
       {/* <Testimonials /> */}
-      <ClerkCard />
+      {/* <ClerkCard /> */}
+      {/* <Dashboard /> */}
+      <Profile />
     </div>
   );
 }

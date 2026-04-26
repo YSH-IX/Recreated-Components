@@ -37,10 +37,10 @@ export default function SocialsMenu() {
   ];
 
   return (
-    <div className="grid sm:grid-cols-3 grid-cols-2 p-4 bg-neutral-800 rounded-4xl gap-2 inset-shadow-[0_0_0_1px] inset-shadow-black/5 shadow-[0_0_0_1px] shadow-neutral-950/10">
+    <div className="grid grid-cols-2 gap-2 rounded-4xl bg-neutral-800 p-4 shadow-[0_0_0_1px] inset-shadow-[0_0_0_1px] shadow-neutral-950/10 inset-shadow-black/5 sm:grid-cols-3">
       {Links.map((item, idx) => (
         <LinkContainer key={idx} link={item.link} tooltip={item.tooltip}>
-          <item.icon className="fill-neutral-50 size-16" />
+          <item.icon className="size-16 fill-neutral-50" />
         </LinkContainer>
       ))}
     </div>
@@ -64,16 +64,16 @@ const LinkContainer = ({
       draggable="false"
       className={cn(
         'div-center',
-        'p-4 bg-neutral-800 border border-neutral-900 rounded-2xl will-change-transform grid-cols-1',
-        '-translate-y-1 shadow-[0_2px_2px] shadow-neutral-950 inset-shadow-[0_2px_2px] inset-shadow-white/15',
+        'grid-cols-1 rounded-2xl border border-neutral-900 bg-neutral-800 p-4 will-change-transform',
+        '-translate-y-1 shadow-[0_2px_2px] inset-shadow-[0_2px_2px] shadow-neutral-950 inset-shadow-white/15',
         'cursor-pointer transition-transform duration-100 ease-out',
-        'hover:translate-y-0 hover:inset-shadow-[0_4px_10px] hover:inset-shadow-neutral-950 hover:shadow-[0_-2px_2px] hover:shadow-neutral-800/1 relative group',
-        'active:translate-y-0 active:inset-shadow-[0_4px_10px] active:inset-shadow-neutral-950 active:shadow-[0_-2px_2px] active:shadow-neutral-800/1',
+        'group relative hover:translate-y-0 hover:shadow-[0_-2px_2px] hover:inset-shadow-[0_4px_10px] hover:shadow-neutral-800/1 hover:inset-shadow-neutral-950',
+        'active:translate-y-0 active:shadow-[0_-2px_2px] active:inset-shadow-[0_4px_10px] active:shadow-neutral-800/1 active:inset-shadow-neutral-950',
       )}
     >
       <div
         className={cn(
-          'pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-neutral-800 border border-neutral-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 inset-shadow-[0_1.5px] inset-shadow-white/15',
+          'pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 rounded border border-neutral-900 bg-neutral-800 px-2 py-1 text-sm whitespace-nowrap text-white opacity-0 inset-shadow-[0_1.5px] inset-shadow-white/15 transition-opacity duration-200 group-hover:opacity-100',
         )}
       >
         {tooltip}
