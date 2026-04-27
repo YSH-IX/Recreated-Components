@@ -92,7 +92,7 @@ export const Profile = () => {
                     height={20}
                     width={20}
                     className="size-full object-cover"
-                    loading="eager"
+                    loading="lazy"
                     draggable={false}
                   ></Image>
                 </div>
