@@ -63,12 +63,12 @@ export const Profile = () => {
               initial={{
                 opacity: 1,
                 scale: 1,
-                clipPath: 'inset(0% 0% 100% 0% )',
+                clipPath: 'inset(0% 0% 100% 0%)',
               }}
               animate={{
                 scale: 1,
                 opacity: 1,
-                clipPath: 'inset(0% 0% 0% 0% )',
+                clipPath: 'inset(0% 0% 0% 0%)',
                 filter: 'blur(0px)',
               }}
               transition={{

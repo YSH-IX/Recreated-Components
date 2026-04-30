@@ -10,7 +10,10 @@ import { ClerkCard } from '@/components/card';
 import { Dashboard } from '@/components/dashboard';
 import { Profile } from '@/components/profile';
 import { ScrollSection } from '@/components/scrollSection';
-
+import { Faq } from '@/components/faq';
+import { Box } from '@/components/3d-box'
+import { Buttons } from '@/components/buttons'
+	
 export default function Home() {
   return (
     <div className="div-center min-h-fit w-full  bg-gray-100 sm:h-screen">
@@ -28,8 +31,11 @@ export default function Home() {
       {/* <Testimonials /> */}
       {/* <ClerkCard /> */}
       {/* <Dashboard /> */}
-      <Profile />
+      {/* <Profile /> */}
+      {/* <Faq /> */}
       {/* <ScrollSection /> */}
+      {/* <Box /> */}
+      <Buttons /> 
     </div>
   );
 }
