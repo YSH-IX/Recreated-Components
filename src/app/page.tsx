@@ -13,6 +13,7 @@ import { ScrollSection } from '@/components/scrollSection';
 import { Faq } from '@/components/faq';
 import { Box } from '@/components/3d-box'
 import { Buttons } from '@/components/buttons'
+import { ControlButtons } from '@/components/controlButtons';
 	
 export default function Home() {
   return (
@@ -35,7 +36,8 @@ export default function Home() {
       {/* <Faq /> */}
       {/* <ScrollSection /> */}
       {/* <Box /> */}
-      <Buttons /> 
+      {/* <Buttons />  */}
+      <ControlButtons /> 
     </div>
   );
 }

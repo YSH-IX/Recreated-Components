@@ -15,9 +15,32 @@
 .div-center {
   @apply flex items-center justify-center;
 }
+.red-gradient-outer {
+  @apply bg-linear-to-b from-red-400 to-red-500;
+}
+/* .red-gradient-outer-inverse {
+  @apply bg-linear-to-b from-red-500 to-red-400;
+} */
+.red-gradient-inner {
+  @apply bg-linear-to-b from-red-500 to-red-400;
+}
+/* .red-gradient-inner-inverse {
+  @apply bg-linear-to-b from-red-400 to-red-500;
+} */
 
+.gray-gradient-outer {
+  @apply bg-linear-to-b from-gray-300 to-gray-400;
+}
+/* .gray-gradient-outer-inverse {
+  @apply bg-linear-to-b from-gray-400 to-gray-300;
+} */
+
+.gray-gradient-inner {
+  @apply bg-linear-to-b from-gray-400 to-gray-300;
+}
+/* .gray-gradient-inner-inverse {
+  @apply bg-linear-to-b from-gray-300 to-gray-400;
+} */
 .key-shadow {
   @apply cursor-pointer shadow-[0_1px_2px_1px] inset-shadow-[0_2px_2px_0.5px] shadow-neutral-950/20 inset-shadow-neutral-50 will-change-transform active:scale-96;
 }
-
-      
