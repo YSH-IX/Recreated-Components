@@ -1,165 +1,122 @@
 'use client';
-
-import { cn } from '@/lib/utils';
 import { CardsIcon, CubeIcon, ListDashesIcon } from '@phosphor-icons/react';
 import Image from 'next/image';
-import { ReactNode, useState } from 'react';
+import { useState } from 'react';
 
-interface ChipProps {
-  children: ReactNode;
+const Chip = ({
+  children,
+  className,
+  ...rest
+}: {
+  children: React.ReactNode;
   className?: string;
-  onClick?: () => void;
-}
+}) => (
+  <div className={className} {...rest}>
+    {children}
+  </div>
+);
 
-interface CardProps {
-  children?: ReactNode;
+const Card = ({
+  children,
+  className,
+  ...rest
+}: {
+  children?: React.ReactNode;
   className?: string;
-}
+}) => (
+  <div className={className} {...rest}>
+    {children}
+  </div>
+);
+
+const CardImg = ({
+  children,
+  className,
+  ...rest
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) => (
+  <div className={className} {...rest}>
+    {children}
+  </div>
+);
+const CardInfo = ({
+  children,
+  className,
+  ...rest
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) => (
+  <div className={className} {...rest}>
+    {children}
+  </div>
+);
 
 const SharedMenu = () => {
   const toggleButtons = [
-    {
-      viewType: 'List View',
-      icon: ListDashesIcon,
-    },
-    {
-      viewType: 'Card View',
-      icon: CardsIcon,
-    },
-    {
-      viewType: 'Pack View',
-      icon: CubeIcon,
-    },
+    { viewType: 'List View', icon: ListDashesIcon },
+    { viewType: 'Card View', icon: CardsIcon },
+    { viewType: 'Pack View', icon: CubeIcon },
   ];
 
   const CardList = [
     {
-      src: '/jn.jpg',
+      src: '/eren.jpg',
       title: 'Skilled Fingers Series',
       ethValue: '0.855',
       serial: '#209',
       alt: 'jn image',
     },
     {
-      src: '/jgn.jpg',
+      src: '/anakin.jpg',
       title: 'Vibrant Vibes Series',
       ethValue: '0.209',
       serial: '#808',
       alt: 'jgn image',
     },
   ];
-  const [id, setId] = useState<String>('List View');
+
+  const [cardId, setCardId] = useState<string>('List View');
 
   return (
-    <div
-      className={cn(
-        'overflow- relative flex h-fit w-full max-w-fit flex-col items-center justify-start divide-y divide-neutral-800 rounded-4xl border border-neutral-700/70 bg-neutral-900',
-        "after:absolute after:-top-14 after:left-1/2 after:h-fit after:w-fit after:-translate-x-1/2 after:rounded-xl after:border after:border-neutral-700/80 after:bg-neutral-900 after:px-4 after:py-1.5 after:content-['Chips']",
-      )}
-    >
-      {/* Chips */}
-      <div className="flex w-full items-center justify-center gap-2 p-2 text-xs font-medium text-neutral-300 sm:text-sm">
-        {toggleButtons.map((item, idx) => (
-          <Chip
-            key={idx}
-            onClick={() => {
-              setId(item.viewType);
-            }}
-            className={cn(
-              'cursor-pointer will-change-transform select-none',
-              id === item.viewType
-                ? 'border-green-600  text-neutral-50 shadow inset-shadow-[0_1px] shadow-neutral-950 inset-shadow-white/60 bg-linear-to-b from-green-400 to-green-600 text-shadow'
-                : '',
-            )}
-          >
-            <item.icon
-              weight="bold"
-              size={20}
-              className={cn(
-                id === item.viewType ? 'fill-neutral-50' : 'fill-neutral-300',
-                'size-4 sm:size-5',
-              )}
-            />
-            <p>{item.viewType}</p>
-          </Chip>
-        ))}
+    <div className="bg-background-100 div-center min-h-screen w-full">
+      <div className='w-full max-w-xl '>
+        <div className="rounded-2xl border border-neutral-400 p-2">
+          <div className='w-fit mx-auto flex items-center gap-2'>
+          {toggleButtons.map((item, idx) => (
+            <Chip key={idx} className='flex items-center gap-1 py-2 pl-3.5 pr-4 border border-neutral-200 rounded-full text-neutral-200 text-sm'>
+              <item.icon size={20} />
+              <span>{item.viewType}</span>
+            </Chip>
+          ))}
+        </div>
+        </div>
+        <div>
+          {CardList.map((item, idx) => (
+            <Card key={idx}>
+              <CardImg className="relative min-h-10 min-w-10">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                />
+              </CardImg>
+              <CardInfo>
+                <p>{item.title}</p>
+                <div>
+                  <span>
+                    {item.ethValue} <span>ETH</span>
+                  </span>
+                  <span>{item.serial}</span>
+                </div>
+              </CardInfo>
+            </Card>
+          ))}
+        </div>
       </div>
-      {/* Cards */}
-      {/* <div
-        className={cn(
-          'grid h-fit w-full max-w-md grid-cols-1 grid-rows-2 gap-2 bg-neutral-900',
-          id == 'List View' ? 'grid-cols-1' : 'grid-cols-2',
-        )}
-      >
-        {CardList.map((item, idx) => (
-          <Card
-            key={idx}
-            className={cn(
-              'col-span-1 row-span-1 w-full rounded-3xl border border-neutral-700 p-1.5',
-              id == 'List View' ? '' : 'col-span-1 row-span-2 flex flex-col',
-            )}
-          >
-            <CardImg>
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={80}
-                height={80}
-                className={cn('aspect-square rounded-2xl')}
-              />
-            </CardImg>
-            <CardInfo>
-              <p className={cn('text-base font-medium text-neutral-200')}>
-                {item.title}
-              </p>
-              <div className="flex w-full items-center justify-between font-medium">
-                <span className="text-sm text-neutral-200">
-                  {item.ethValue}{' '}
-                  <span className="text-sm text-neutral-500">ETH</span>
-                </span>
-                <span className="text-sm text-neutral-500">{item.serial}</span>
-              </div>
-            </CardInfo>
-          </Card>
-        ))}
-      </div> */}
-    </div>
-  );
-};
-
-const Chip = ({ className, children, ...rest }: ChipProps) => {
-  return (
-    <div
-      className={cn(
-        'flex items-center gap-1 rounded-[100px] border border-neutral-700/90 py-1.5 pr-3.5 pl-2.5 shadow-neutral-950 transition-all duration-100 ease-out hover:shadow-sm sm:py-2 sm:pr-4 sm:pl-3',
-        className,
-      )}
-      {...rest}
-    >
-      {children}
-    </div>
-  );
-};
-
-const Card = ({ children, className }: CardProps) => {
-  return (
-    <div className={cn('flex h-fit items-start gap-2', className)}>
-      {children}
-    </div>
-  );
-};
-const CardImg = ({ children, className }: CardProps) => {
-  return <div className={cn('', className)}>{children}</div>;
-};
-const CardInfo = ({ children, className }: CardProps) => {
-  return (
-    <div
-      className={cn(
-        'flex h-full w-full flex-col items-start justify-between gap-0',
-        className,
-      )}
-    >
-      {children}
     </div>
   );
 };

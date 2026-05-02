@@ -22,7 +22,7 @@
   @apply bg-linear-to-b from-red-500 to-red-400;
 } */
 .red-gradient-inner {
-  @apply bg-linear-to-b from-red-500 to-red-400;
+  @apply bg-linear-to-bl from-red-500 to-red-400;
 }
 /* .red-gradient-inner-inverse {
   @apply bg-linear-to-b from-red-400 to-red-500;
@@ -36,7 +36,7 @@
 } */
 
 .gray-gradient-inner {
-  @apply bg-linear-to-b from-gray-400 to-gray-300;
+  @apply bg-linear-to-bl from-gray-400 to-gray-300;
 }
 /* .gray-gradient-inner-inverse {
   @apply bg-linear-to-b from-gray-300 to-gray-400;
