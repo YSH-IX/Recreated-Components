@@ -33,7 +33,7 @@ export const ControlButtons = () => {
             key={idx}
             className={cn(
               'relative flex flex-col items-center rounded-full bg-linear-to-b from-neutral-400 via-neutral-300 to-neutral-400 p-2 will-change-transform',
-              'after:absolute after:inset-1.5 after:-z-1 after:rounded-full after:bg-linear-to-b after:from-taupe-700 after:via-taupe-800 after:to-taupe-500 after:content-[""]',
+              'after:absolute after:inset-1.5 after:-z-1 after:rounded-full after:bg-linear-to-b after:from-taupe-700 after:via-taupe-800 after:to-taupe-500 after:content-[""] ',
             )}
           >
             <button
@@ -44,6 +44,9 @@ export const ControlButtons = () => {
                 }
                 setIsRountBtnClicked(item.mode);
                 console.log(idx);
+              }}
+              style={{
+                willChange: "transform"
               }}
               className={cn(
                 'cursor-pointer appearance-none rounded-full bg-linear-to-b p-2 transition-all duration-75   ease-out will-change-transform outline-none hover:shadow-[0_30px_10px_0_rgba(20,20,20,0.5)] active:shadow-[0_26px_10px_0_rgba(20,20,20,0.5)]',
