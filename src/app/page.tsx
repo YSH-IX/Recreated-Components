@@ -11,12 +11,12 @@ import { Dashboard } from '@/components/dashboard';
 import { Profile } from '@/components/profile';
 import { ScrollSection } from '@/components/scrollSection';
 import { Faq } from '@/components/faq';
-import { Box } from '@/components/3d-box'
-import { Buttons } from '@/components/buttons'
+import { Box } from '@/components/3d-box';
+import { Buttons } from '@/components/buttons';
 import { ControlButtons } from '@/components/controlButtons';
 import { Form } from '@/ui/form';
 import { Bits } from '@/components/bits';
-	
+
 export default function Home() {
   return (
     <div className="div-center min-h-fit w-full flex-col gap-20 bg-gray-100 sm:h-screen">

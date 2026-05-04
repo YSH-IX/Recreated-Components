@@ -117,9 +117,7 @@ export const Faq = () => {
                 {open == idx && (
                   <motion.div
                     initial={{
-                      // filter: 'blur(8px)',
-                      // opacity: 0.5,
-                      clipPath: 'inset 0% 0% 100% 0%'
+                      clipPath: 'inset 0% 0% 100% 0%',
                     }}
                     animate={{
                       filter: 'blur(0px)',
@@ -128,7 +126,6 @@ export const Faq = () => {
                     exit={{
                       filter: 'blur(8px)',
                       opacity: 0.5,
-                      // transition: { duration: 0.1 },
                     }}
                     transition={{
                       duration: 0.1,
