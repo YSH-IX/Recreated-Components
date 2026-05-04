@@ -41,9 +41,9 @@ export default function Home() {
       {/* <Buttons />  */}
 
       {/* <ControlButtons /> */}
-      <Bits />
+      {/* <Bits /> */}
 
-      {/* <Form /> */}
+      <Form />
     </div>
   );
 }
