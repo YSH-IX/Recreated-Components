@@ -48,7 +48,7 @@ export const FrostedNav = () => {
     <div
       className={cn(
         'flex justify-center',
-        'font-inter relative h-full w-full items-end bg-neutral-800 p-4',
+        'font-inter relative h-screen w-full items-end bg-neutral-800 px-4 py-12',
       )}
     >
       <Image
