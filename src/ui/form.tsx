@@ -135,7 +135,7 @@ export const Form = () => {
 
           {/* Email Input Field */}
           <div
-            className={cn('relative flex w-full flex-col items-start gap-1')}
+            className={cn('relative flex w-full flex-col items-start gap-0.5')}
           >
             <label
               htmlFor="email"
@@ -159,7 +159,7 @@ export const Form = () => {
 
           {/* Password Input Field */}
           <div
-            className={cn('relative flex w-full flex-col items-start gap-1')}
+            className={cn('relative flex w-full flex-col items-start gap-0.5')}
           >
             <label
               htmlFor="password"

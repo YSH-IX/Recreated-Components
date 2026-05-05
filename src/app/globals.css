@@ -10,6 +10,26 @@
   --font-inter: var(--font-inter);
   --text-xxs: 10px;
   --text-xsm: 9px;
+  --animate-gradient: gradient 8s linear infinite;
+  --animate-mesh: mesh 30s linear infinite;
+
+  @keyframes mesh {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
 }
 
 .div-center {
@@ -18,29 +38,16 @@
 .red-gradient-outer {
   @apply bg-linear-to-b from-red-400 to-red-500;
 }
-/* .red-gradient-outer-inverse {
-  @apply bg-linear-to-b from-red-500 to-red-400;
-} */
 .red-gradient-inner {
   @apply bg-linear-to-bl from-red-500 to-red-400;
 }
-/* .red-gradient-inner-inverse {
-  @apply bg-linear-to-b from-red-400 to-red-500;
-} */
-
 .gray-gradient-outer {
   @apply bg-linear-to-b from-gray-300 to-gray-400;
 }
-/* .gray-gradient-outer-inverse {
-  @apply bg-linear-to-b from-gray-400 to-gray-300;
-} */
 
 .gray-gradient-inner {
   @apply bg-linear-to-bl from-gray-400 to-gray-300;
 }
-/* .gray-gradient-inner-inverse {
-  @apply bg-linear-to-b from-gray-300 to-gray-400;
-} */
 .key-shadow {
   @apply cursor-pointer shadow-[0_1px_2px_1px] inset-shadow-[0_2px_2px_0.5px] shadow-neutral-950/20 inset-shadow-neutral-50 will-change-transform active:scale-96;
 }

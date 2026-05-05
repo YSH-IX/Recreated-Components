@@ -16,6 +16,8 @@ import { Buttons } from '@/components/buttons';
 import { ControlButtons } from '@/components/controlButtons';
 import { Form } from '@/ui/form';
 import { Bits } from '@/components/bits';
+import { ShimmerTxt } from '@/components/shimmerTxt';
+import { MeshGradient } from '@/components/meshGradient';
 
 export default function Home() {
   return (
@@ -43,7 +45,9 @@ export default function Home() {
       {/* <ControlButtons /> */}
       {/* <Bits /> */}
 
-      <Form />
+      {/* <Form /> */}
+      {/* <ShimmerTxt /> */}
+      <MeshGradient />
     </div>
   );
 }
