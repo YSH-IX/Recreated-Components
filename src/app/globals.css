@@ -14,7 +14,8 @@
   --animate-mesh: mesh 30s linear infinite;
 
   @keyframes mesh {
-    0%, 100% {
+    0%,
+    100% {
       background-position: 0% 50%;
     }
     50% {
@@ -50,4 +51,8 @@
 }
 .key-shadow {
   @apply cursor-pointer shadow-[0_1px_2px_1px] inset-shadow-[0_2px_2px_0.5px] shadow-neutral-950/20 inset-shadow-neutral-50 will-change-transform active:scale-96;
+}
+
+.icon-shadow {
+  @apply shadow-[inset_-0.5px_0.5px_0_0_rgba(200,200,200,0.2)];
 }

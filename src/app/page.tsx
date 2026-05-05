@@ -18,6 +18,8 @@ import { Form } from '@/ui/form';
 import { Bits } from '@/components/bits';
 import { ShimmerTxt } from '@/components/shimmerTxt';
 import { MeshGradient } from '@/components/meshGradient';
+import { MotionExample } from '@/components/motion-example';
+import { FrostedNav } from '@/components/frostedNav';
 
 export default function Home() {
   return (
@@ -47,7 +49,9 @@ export default function Home() {
 
       {/* <Form /> */}
       {/* <ShimmerTxt /> */}
-      <MeshGradient />
+      {/* <MeshGradient /> */}
+      {/* <MotionExample /> */}
+      <FrostedNav />
     </div>
   );
 }
