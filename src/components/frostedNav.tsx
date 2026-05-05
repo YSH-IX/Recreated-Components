@@ -55,7 +55,7 @@ export const FrostedNav = () => {
         src={'/anakin.jpg'}
         alt={'anakin.jpg'}
         fill
-        className="absolute inset-2 object-contain"
+        className="absolute inset-2 object-cover"
       ></Image>
       <div className="flex flex-col items-end justify-center gap-4">
         <button
