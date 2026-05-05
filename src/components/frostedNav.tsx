@@ -48,14 +48,14 @@ export const FrostedNav = () => {
     <div
       className={cn(
         'flex justify-center',
-        'font-inter relative min-h-screen w-full items-end bg-neutral-800 p-4',
+        'font-inter relative h-full w-full items-end bg-neutral-800 p-4',
       )}
     >
       <Image
         src={'/anakin.jpg'}
         alt={'anakin.jpg'}
         fill
-        className="absolute inset-2 sm:object-contain object-cover"
+        className="absolute inset-2 object-contain"
       ></Image>
       <div className="flex flex-col items-end justify-center gap-4">
         <button
