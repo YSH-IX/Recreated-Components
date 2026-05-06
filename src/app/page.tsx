@@ -20,13 +20,16 @@ import { ShimmerTxt } from '@/components/shimmerTxt';
 import { MeshGradient } from '@/components/meshGradient';
 import { MotionExample } from '@/components/motion-example';
 import { FrostedNav } from '@/components/frostedNav';
+import { Slider } from '@/components/slider';
+import { LayoutCard } from '@/components/layout-card';
+import { Nav } from '@/components/nav';
 
 export default function Home() {
   return (
     <div className="div-center min-h-fit w-full flex-col gap-20 bg-gray-100 sm:h-screen">
       {/* <SocialsMenu /> */}
       {/* <Player /> */}
-      {/* <SharedMenu /> */}
+      <SharedMenu />
       {/* <Messages />   */}
       {/* <TextGenerate          text={
           'I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past, I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.'
@@ -51,7 +54,10 @@ export default function Home() {
       {/* <ShimmerTxt /> */}
       {/* <MeshGradient /> */}
       {/* <MotionExample /> */}
-      <FrostedNav />
+      {/* <FrostedNav /> */}
+      {/* <Slider /> */}
+	{/*       <LayoutCard /> */} 
+        {/* <Nav />  */}
     </div>
   );
 }

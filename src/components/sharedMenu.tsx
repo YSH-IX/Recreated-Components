@@ -82,16 +82,19 @@ const SharedMenu = () => {
 
   return (
     <div className="bg-background-100 div-center min-h-screen w-full">
-      <div className='w-full max-w-xl '>
+      <div className="w-full max-w-xl">
         <div className="rounded-2xl border border-neutral-400 p-2">
-          <div className='w-fit mx-auto flex items-center gap-2'>
-          {toggleButtons.map((item, idx) => (
-            <Chip key={idx} className='flex items-center gap-1 py-2 pl-3.5 pr-4 border border-neutral-200 rounded-full text-neutral-200 text-sm'>
-              <item.icon size={20} />
-              <span>{item.viewType}</span>
-            </Chip>
-          ))}
-        </div>
+          <div className="mx-auto flex w-fit items-center gap-2">
+            {toggleButtons.map((item, idx) => (
+              <Chip
+                key={idx}
+                className="flex items-center gap-1 rounded-full border border-neutral-200 py-2 pr-4 pl-3.5 text-sm text-neutral-200"
+              >
+                <item.icon size={20} />
+                <span>{item.viewType}</span>
+              </Chip>
+            ))}
+          </div>
         </div>
         <div>
           {CardList.map((item, idx) => (
