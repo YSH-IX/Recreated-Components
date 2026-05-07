@@ -91,7 +91,7 @@ export const FrostedNav = () => {
           className={cn(
             'relative',
             'shadow-[inset_0_0_0.5px_0_rgba(255,255,255,0.1),inset_0.5px_0.5px_0.5px_0_rgba(255,255,255,0.2),inset_-0.5px_-0.5px_0.5px_0_rgba(255,255,255,0.2)]',
-            'grid grid-cols-5 rounded-full bg-white/5 p-1 backdrop-blur-lg',
+            'grid grid-cols-5 rounded-full bg-white/5 p-1 gap-1 backdrop-blur-lg',
           )}
         >
           {navItems.map((navItem: NavItem) => {
