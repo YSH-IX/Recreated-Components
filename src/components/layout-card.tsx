@@ -82,7 +82,7 @@ export const LayoutCard = () => {
             opacity: 1,
           }}
           ref={overlayRef}
-          className="absolute inset-0 z-9 bg-black/40 backdrop-blur-xl"
+          className="absolute inset-0 z-9 bg-black/40 "
         ></motion.div>
       )}
       {selected && (
