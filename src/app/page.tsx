@@ -1,4 +1,5 @@
 import { Expandables } from '@/components/expandables';
+import { ScrollBar } from '@/components/scrollBar';
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
       {/* <Nav />  */}
       {/* <MultiStepBtn /> */}
       <Expandables />
+      {/* <ScrollBar /> */}
     </div>
   );
 }
