@@ -28,6 +28,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     />
   ),
 );
+Input.displayName = 'Input';
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
@@ -237,7 +238,7 @@ export const Form = () => {
           <span>Continue with Google</span>
         </Button>
         <div className="div-center mt-6 items-center gap-1 text-sm text-neutral-600">
-          <span>Don't have an account ?</span>
+          <span>Don&apos;t have an account ?</span>
           <Link
             href={'/sign-up'}
             prefetch

@@ -262,10 +262,7 @@ export const ClerkCard = () => {
 const ClerkIcon = ({
   className,
   ...rest
-}: {
-  className?: string;
-  [key: string]: any;
-}) => {
+}: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       role="img"

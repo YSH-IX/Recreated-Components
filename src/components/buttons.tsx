@@ -6,7 +6,7 @@ import { motion, Variants, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 
 export const Buttons = () => {
-  const [copied, setCopied] = useState<Boolean>(false);
+  const [copied, setCopied] = useState(false);
 
   const parentVariants: Variants = {
     initial: {

@@ -1,5 +1,3 @@
-import { cn } from '@/lib/utils';
-
 export const MeshGradient = () => {
   return (
     <div className="div-center min-h-screen w-full bg-neutral-100 p-10">

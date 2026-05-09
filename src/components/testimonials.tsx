@@ -2,13 +2,7 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { motion, Variants } from 'motion/react';
-import { useEffect, useState } from 'react';
-
 export const Testimonials = () => {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setIsMounted((val) => !val);
-  }, []);
 
   const testimonialInfo = [
     {
@@ -96,7 +90,7 @@ export const Testimonials = () => {
     <motion.div
       variants={containerVariants}
       initial="initial"
-      animate={isMounted ? 'visible' : 'initial'}
+      animate="visible"
       className="bg-background-100 grid h-fit w-fit grid-cols-1 grid-rows-1 gap-1 rounded-4xl border border-neutral-800 p-1 md:grid-cols-2 md:grid-rows-2"
     >
       {testimonialInfo.map((item, idx) => (
@@ -117,7 +111,9 @@ export const Testimonials = () => {
               'bg-background-100 flex h-full min-h-[180px] w-full max-w-sm flex-col items-start justify-between gap-4 rounded-[28px] border border-neutral-800 p-6 shadow-md shadow-neutral-950 transition ease-out sm:p-8',
             )}
           >
-            <p className="text-base text-neutral-300">" {item.review} "</p>
+            <p className="text-base text-neutral-300">
+              &ldquo;{item.review}&rdquo;
+            </p>
             <div className="flex items-center gap-2">
               <div className="size-8 min-h-8 min-w-8 overflow-hidden rounded-full">
                 <Image

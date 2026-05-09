@@ -337,8 +337,8 @@ export const Keyboard = () => {
               pressedKeys.has('Quote') && pressed,
             )}
           >
-            <span>"</span>
-            <span>'</span>
+            <span>&quot;</span>
+            <span>&apos;</span>
           </div>
           <div
             className={cn(

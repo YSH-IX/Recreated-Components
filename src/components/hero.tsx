@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useRef } from 'react';
-import { useScroll, motion, useMotionValueEvent } from 'motion/react';
+import { useScroll, useMotionValueEvent } from 'motion/react';
 
 export const Hero = () => {
   const ref = useRef<HTMLDivElement>(null);

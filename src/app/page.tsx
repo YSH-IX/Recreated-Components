@@ -1,29 +1,3 @@
-import { Messages } from '@/components/messages';
-import Player from '@/components/player';
-import SharedMenu from '@/components/sharedMenu';
-import SocialsMenu from '@/components/socialsMenu';
-import { TextGenerate } from '@/components/textGenerate';
-import { Keyboard } from '@/components/keyboard';
-import { Testimonials } from '@/components/testimonials';
-import { Hero } from '@/components/hero';
-import { ClerkCard } from '@/components/card';
-import { Dashboard } from '@/components/dashboard';
-import { Profile } from '@/components/profile';
-import { ScrollSection } from '@/components/scrollSection';
-import { Faq } from '@/components/faq';
-import { Box } from '@/components/3d-box';
-import { Buttons } from '@/components/buttons';
-import { ControlButtons } from '@/components/controlButtons';
-import { Form } from '@/ui/form';
-import { Bits } from '@/components/bits';
-import { ShimmerTxt } from '@/components/shimmerTxt';
-import { MeshGradient } from '@/components/meshGradient';
-import { MotionExample } from '@/components/motion-example';
-import { FrostedNav } from '@/components/frostedNav';
-import { Slider } from '@/components/slider';
-import { LayoutCard } from '@/components/layout-card';
-import { Nav } from '@/components/nav';
-import { MultiStepBtn } from '@/components/multiStepBtn';
 import { Expandables } from '@/components/expandables';
 
 export default function Home() {
@@ -62,7 +36,6 @@ export default function Home() {
       {/* <Nav />  */}
       {/* <MultiStepBtn /> */}
       <Expandables />
-
     </div>
   );
 }
