@@ -1,18 +1,8 @@
 @import 'tailwindcss';
 
-:root {
-  --font-geist-sans:
-    'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-geist-mono:
-    'SFMono-Regular', 'SF Mono', Consolas, 'Liberation Mono', monospace;
-  --font-instrument: 'Georgia', 'Times New Roman', serif;
-  --font-inter:
-    'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-geist: var(--font-geist);
   --font-instrument: var(--font-instrument);
 }
 @theme {

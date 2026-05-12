@@ -1,7 +1,14 @@
 import { Expandables } from '@/components/expandables';
+import { FrostedNav } from '@/components/frostedNav';
+import { GooeyMenu } from '@/components/gooey-menu';
+import { LayoutCard } from '@/components/layout-card';
+import { Nav } from '@/components/nav';
 import { ScrollBar } from '@/components/scrollBar';
+import { Slider } from '@/components/slider';
 
 export default function Home() {
+
+
   return (
     <div className="div-center min-h-fit w-full flex-col gap-20 bg-gray-100 sm:h-screen">
       {/* <SocialsMenu /> */}
@@ -36,8 +43,9 @@ export default function Home() {
       {/* <SharedMenu />  */}
       {/* <Nav />  */}
       {/* <MultiStepBtn /> */}
-      <Expandables />
+      {/* <Expandables /> */}
       {/* <ScrollBar /> */}
+      <GooeyMenu />
     </div>
   );
 }

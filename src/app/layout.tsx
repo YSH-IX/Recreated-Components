@@ -1,5 +1,21 @@
 import type { Metadata } from 'next';
+import { Geist, Instrument_Serif, Inter } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+});
+const instrument_Serif = Instrument_Serif({
+  subsets: ['latin'],
+  variable: '--font-instrument',
+  weight: ['400'],
+});
 
 export const metadata: Metadata = {
   title: 'Recreated Components by YSH',
@@ -12,7 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html
+      lang="en"
+      className={`h-full antialiased ${inter.variable} ${geist.variable} ${instrument_Serif.variable}`}
+    >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
