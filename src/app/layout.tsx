@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist, Instrument_Serif, Inter } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from 'next-themes';
+import { Providers } from '@/components/providers';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,10 +32,16 @@ export default function RootLayout({
 }>) {
   return (
     <html
+      suppressHydrationWarning
       lang="en"
       className={`h-full antialiased ${inter.variable} ${geist.variable} ${instrument_Serif.variable}`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="relative flex min-h-full flex-col">
+        <Providers>
+          {children}
+          <ThemeToggle />
+        </Providers>
+      </body>
     </html>
   );
 }

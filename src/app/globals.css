@@ -1,10 +1,18 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
 
 @theme inline {
   --font-inter: var(--font-inter);
   --font-geist: var(--font-geist);
   --font-instrument: var(--font-instrument);
 }
+
 @theme {
   --color-background-100: #111111;
   --font-inter: var(--font-inter);
@@ -36,12 +44,15 @@
 .div-center {
   @apply flex items-center justify-center;
 }
+
 .red-gradient-outer {
   @apply bg-linear-to-b from-red-400 to-red-500;
 }
+
 .red-gradient-inner {
   @apply bg-linear-to-bl from-red-500 to-red-400;
 }
+
 .gray-gradient-outer {
   @apply bg-linear-to-b from-gray-300 to-gray-400;
 }
@@ -49,6 +60,7 @@
 .gray-gradient-inner {
   @apply bg-linear-to-bl from-gray-400 to-gray-300;
 }
+
 .key-shadow {
   @apply cursor-pointer shadow-[0_1px_2px_1px] inset-shadow-[0_2px_2px_0.5px] shadow-neutral-950/20 inset-shadow-neutral-50 will-change-transform active:scale-96;
 }
@@ -56,4 +68,3 @@
 .icon-shadow {
   @apply shadow-[inset_-0.5px_0.5px_0_0_rgba(200,200,200,0.2)];
 }
-

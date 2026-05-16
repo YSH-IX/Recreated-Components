@@ -1,10 +1,12 @@
 import { Expandables } from '@/components/expandables';
 import { FrostedNav } from '@/components/frostedNav';
 import { GooeyMenu } from '@/components/gooey-menu';
+import { HorizonatialTooltip } from '@/components/horizontalToolTip';
 import { LayoutCard } from '@/components/layout-card';
 import { Nav } from '@/components/nav';
 import { ScrollBar } from '@/components/scrollBar';
 import { Slider } from '@/components/slider';
+import { Tooltip } from '@/components/tooltip';
 
 export default function Home() {
 
@@ -45,7 +47,9 @@ export default function Home() {
       {/* <MultiStepBtn /> */}
       {/* <Expandables /> */}
       {/* <ScrollBar /> */}
-      <GooeyMenu />
+      {/* <GooeyMenu /> */}
+      <Tooltip /> 
+      {/* <HorizonatialTooltip /> */}
     </div>
   );
 }

@@ -25,7 +25,7 @@ export const GooeyMenu = () => {
     },
     visible: {
       borderRadius: 14,
-      y: -50,
+      y: -48,
       width: '220px',
       height: '144px',
       transition: {
