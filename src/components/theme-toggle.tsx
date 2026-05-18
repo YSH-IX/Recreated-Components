@@ -46,10 +46,10 @@ export const ThemeToggle = () => {
         'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100',
       )}
     >
-      <div className="relative p-2">
+      <div className="relative p-3">
         <CircleHalfIcon
           weight="regular"
-          size={22}
+          size={18}
           color="currentColor"
           className="size-7"
         />

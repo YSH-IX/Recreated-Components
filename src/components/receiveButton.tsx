@@ -8,7 +8,7 @@ import { FingerprintIcon, XIcon } from '@phosphor-icons/react';
 export const ReceiveButton = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
-    <div className="div-center font-inter relative h-screen w-full flex-col bg-gray-300 px-4 selection:bg-sky-100 selection:text-sky-500 dark:bg-neutral-900 dark:selection:bg-sky-200 dark:selection:text-sky-600">
+    <div className="div-center font-inter relative h-screen w-full flex-col bg-gray-100 px-4 selection:bg-sky-100 selection:text-sky-500 dark:bg-neutral-900 dark:selection:bg-sky-200 dark:selection:text-sky-600">
       <LayoutGroup>
         <AnimatePresence mode="popLayout">
           {isOpen ? (
