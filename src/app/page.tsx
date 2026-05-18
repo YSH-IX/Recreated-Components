@@ -4,7 +4,9 @@ import { GooeyMenu } from '@/components/gooey-menu';
 import { HorizonatialTooltip } from '@/components/horizontalToolTip';
 import { LayoutCard } from '@/components/layout-card';
 import { Nav } from '@/components/nav';
+import { ReceiveButton } from '@/components/receiveButton';
 import { ScrollBar } from '@/components/scrollBar';
+import { Showcase } from '@/components/showcase';
 import { Slider } from '@/components/slider';
 import { Tooltip } from '@/components/tooltip';
 
@@ -48,8 +50,10 @@ export default function Home() {
       {/* <Expandables /> */}
       {/* <ScrollBar /> */}
       {/* <GooeyMenu /> */}
-      <Tooltip /> 
+      {/* <Tooltip />  */}
       {/* <HorizonatialTooltip /> */}
+      {/* <Showcase/> */}
+      <ReceiveButton/>
     </div>
   );
 }

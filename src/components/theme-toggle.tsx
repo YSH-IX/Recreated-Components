@@ -41,18 +41,19 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        "absolute right-10 bottom-10 cursor-pointer rounded-full border p-2 transition-transform duration-100 ease-out will-change-transform hover:scale-101 active:scale-98",
-        "border-neutral-400 bg-neutral-100 text-neutral-600",
-        "dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-200"
+        'absolute right-10 bottom-10 z-100 cursor-pointer rounded-full border transition-transform duration-100 ease-out will-change-transform outline-none hover:scale-101 active:scale-98',
+        'border-neutral-300 bg-neutral-100 text-neutral-800',
+        'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100',
       )}
- 
     >
-      <CircleHalfIcon
-        weight="regular"
-        size={22}
-        color="currentColor"
-        className="size-7"
-      />
+      <div className="relative p-2">
+        <CircleHalfIcon
+          weight="regular"
+          size={22}
+          color="currentColor"
+          className="size-7"
+        />
+      </div>
     </button>
   );
 };
