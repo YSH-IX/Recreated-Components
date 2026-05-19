@@ -40,7 +40,7 @@ export const CreateCommunity = () => {
     { name: 'Monthly', value: 'monthly' },
   ];
   return (
-    <div className="div-center font-inter relative h-screen w-full bg-gray-100 dark:bg-neutral-900">
+    <div className="div-center font-inter relative h-screen w-full bg-gray-100 px-3 dark:bg-neutral-900">
       <AnimatePresence>
         {/* Frosted Glass background + Dialog */}
         {isOpen && (
@@ -49,8 +49,8 @@ export const CreateCommunity = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className={cn(
-              'div-center absolute inset-0 bg-white/10 backdrop-blur-2xl selection:bg-neutral-800 selection:text-neutral-200',
-              'dark:bg-black/10 dark:selection:bg-neutral-200 dark:selection:text-neutral-800',
+              'div-center absolute z-20 inset-0 bg-white/10 backdrop-blur-2xl selection:bg-neutral-800 selection:text-neutral-200',
+              'px-4 dark:bg-black/10 dark:selection:bg-neutral-200 dark:selection:text-neutral-800',
             )}
             ref={ref}
             onClick={(e) => {
@@ -59,6 +59,7 @@ export const CreateCommunity = () => {
               }
             }}
           >
+            {/* Actual FORM */}
             <motion.div
               initial={{ y: 10, opacity: 0.8, filter: 'blur(10px)' }}
               animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
@@ -76,25 +77,30 @@ export const CreateCommunity = () => {
                 mass: 0.1,
               }}
               className={cn(
-                'w-full max-w-xl rounded-[28px] bg-neutral-200 p-3 dark:bg-neutral-800',
+                'w-full max-w-[550px] rounded-[28px] bg-neutral-200 p-3 dark:bg-neutral-800',
                 'dark:shadow-[0_1px_2px_1px_rgba(8,8,8,0.2),0_4px_8px_0_rgba(8,8,8,0.6)]',
                 'shadow-[0_1px_2px_1px_rgba(8,8,8,0.1),0_4px_8px_0_rgba(8,8,8,0.1)]',
               )}
             >
-              <div className="flex flex-col rounded-2xl bg-neutral-100 p-8 dark:bg-neutral-900">
+              <div className="flex flex-col rounded-2xl bg-neutral-100 px-4 pt-4 pb-5 md:p-8 dark:bg-neutral-900">
                 <form
-                  className="flex flex-col gap-4"
+                  className="flex flex-col gap-3 md:gap-4"
                   onSubmit={handleSubmit(onSubmit)}
-                >   
+                >
                   <div className="flex w-full items-center justify-between">
-                    <h1 className="text-2xl font-medium tracking-tight text-neutral-800 dark:text-neutral-100">
+                    <h1 className="text-xl font-medium tracking-tight text-neutral-800 md:text-2xl dark:text-neutral-100">
                       Create Community
                     </h1>
                     <span
                       onClick={() => setIsOpen(false)}
                       className="cursor-pointer text-neutral-600 transition-colors duration-150 ease-in-out hover:text-neutral-800 dark:text-neutral-600 dark:hover:text-neutral-200"
                     >
-                      <XIcon weight="regular" color="currentColor" size={22} />
+                      <XIcon
+                        weight="regular"
+                        color="currentColor"
+                        size={22}
+                        className="size-5 md:size-5.5"
+                      />
                     </span>
                   </div>
                   <p className="text- text-sm text-neutral-600 dark:text-neutral-500">
@@ -103,7 +109,7 @@ export const CreateCommunity = () => {
                     application.
                   </p>
                   {/* Community Name */}
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-1.5 md:gap-2">
                     <label
                       htmlFor="communityName"
                       className="text-sm font-medium text-neutral-700 dark:text-neutral-400"
@@ -115,7 +121,7 @@ export const CreateCommunity = () => {
                       type="text"
                       {...register('communityName')}
                       className={cn(
-                        'rounded-xl border border-neutral-300 bg-neutral-50 px-4.5 py-3.5 text-sm transition-all duration-200 ease-out outline-none focus:border-neutral-600 dark:focus:border-neutral-500',
+                        'rounded-xl border border-neutral-300 bg-neutral-50 px-3.5 py-2.5 text-sm transition-all duration-200 ease-out outline-none focus:border-neutral-600 md:px-4.5 md:py-3.5 dark:focus:border-neutral-500',
                         'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100',
 
                         errors.communityName && 'border-red-400',
@@ -133,7 +139,7 @@ export const CreateCommunity = () => {
                     control={control}
                     name="pricingAccess"
                     render={({ field }) => (
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-1.5 md:gap-2">
                         <label
                           htmlFor="pricingAccess"
                           className="text-sm font-medium text-neutral-700 dark:text-neutral-400"
@@ -151,7 +157,7 @@ export const CreateCommunity = () => {
                               <div
                                 defaultValue={item.value}
                                 key={idx}
-                                className="div-center relative col-span-1 h-12 w-full cursor-pointer rounded-full"
+                                className="div-center relative col-span-1 h-10 w-full cursor-pointer rounded-full md:h-12"
                                 onClick={() => field.onChange(item.value)}
                               >
                                 <span
@@ -168,10 +174,10 @@ export const CreateCommunity = () => {
                                   <motion.div
                                     layoutId={`option`}
                                     className={cn(
-                                      'absolute inset-0 rounded-full border border-neutral-200 will-change-transform dark:border-neutral-900',
+                                      'absolute inset-0 rounded-full border border-neutral-300 will-change-transform dark:border-neutral-900',
                                       'dark:shadow-[inset_0_1px_1px_0_rgba(245,245,245,0.2)]',
                                       'shadow-[inset_0_1px_1px_0_rgba(11,11,11,0.1)]',
-                                      'bg-linear-to-b from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900',
+                                      'bg-linear-to-b from-neutral-100 via-neutral-200 to-neutral-300 dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900',
                                     )}
                                   ></motion.div>
                                 )}
@@ -189,7 +195,7 @@ export const CreateCommunity = () => {
                   />
 
                   {/* Application Requirement */}
-                  <div className="my-2 flex items-center justify-between rounded-2xl border border-neutral-300 px-4.5 py-3.5 dark:border-neutral-800">
+                  <div className="my-1 flex items-center justify-between rounded-2xl border border-neutral-300 px-3 py-2 sm:my-1.5 md:px-4.5 md:py-3.5 dark:border-neutral-800">
                     <label
                       htmlFor="isAppRequired"
                       className="text-base text-neutral-700 dark:text-neutral-400"
@@ -233,12 +239,12 @@ export const CreateCommunity = () => {
                     </a>
                   </p>
                   {/* Submit & Cancel Buttons  */}
-                  <div className="mt-2 grid w-full grid-cols-2 gap-4">
+                  <div className="mt-1 grid w-full grid-cols-2 gap-4 md:mt-2">
                     <button
                       type="reset"
                       onClick={() => setIsOpen(false)}
                       className={cn(
-                        'col-span-1 cursor-pointer rounded-full border border-neutral-400 bg-neutral-950/5 py-3 text-base font-medium text-neutral-800 transition-all outline-none hover:bg-neutral-200 active:scale-99',
+                        'col-span-1 shrink-0 cursor-pointer rounded-full border border-neutral-200 bg-neutral-950/5 py-2.5 text-base font-medium text-neutral-800 transition-all outline-none hover:bg-neutral-200 active:scale-99 md:py-3',
                         'dark:border-neutral-600 dark:bg-neutral-950/10 dark:text-neutral-200 dark:hover:bg-neutral-950/50',
                       )}
                     >
@@ -247,13 +253,15 @@ export const CreateCommunity = () => {
                     <button
                       type="submit"
                       className={cn(
-                        'col-span-1 cursor-pointer rounded-full border border-neutral-800 bg-neutral-900 py-3 text-base font-medium text-neutral-100 transition-all will-change-transform outline-none hover:bg-neutral-800 active:scale-99',
+                        'col-span-1 shrink-0 cursor-pointer rounded-full border border-neutral-800 bg-neutral-900 py-2.5 text-base font-medium text-neutral-100 transition-all will-change-transform outline-none hover:bg-neutral-800 active:scale-99 md:py-3',
                         'dark:border-neutral-200 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-neutral-200',
                         'dark:shadow-[inset_0_0_10px_1px_rgba(11,11,11,0.5)]',
                         'shadow-[inset_0_0_10px_1px_rgba(255,255,255,0.2)]',
                       )}
+                      onClick={() => setIsOpen(false)}
                     >
-                      Create Community
+                      <span className="hidden md:block">Create Community</span>
+                      <span className="block md:hidden">Create</span>
                     </button>
                   </div>
                 </form>
@@ -266,7 +274,7 @@ export const CreateCommunity = () => {
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          'cursor-pointer rounded-full border border-neutral-800 bg-neutral-800 px-10 py-3 text-lg font-medium tracking-tight text-neutral-200 outline-none md:text-lg',
+          'cursor-pointer rounded-full border border-neutral-800 bg-neutral-800 px-10 py-3 text-base font-medium tracking-tight text-neutral-200 outline-none md:text-lg',
           'dark:border-neutral-200 dark:bg-neutral-100 dark:text-neutral-900',
           'shadow-[0_0_10px_2px_rgba(20,20,20,0.4),inset_0_1px_1px_0_rgba(245,245,245,0.3),inset_0_-1px_1px_0_rgba(245,245,245,0.2)]',
           'dark:shadow-[0_0_30px_0_rgba(245,245,245,0.3)]',

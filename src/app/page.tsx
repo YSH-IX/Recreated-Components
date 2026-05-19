@@ -1,3 +1,4 @@
+import { CreateCommunity } from '@/components/createCommunity';
 import { Expandables } from '@/components/expandables';
 import { FrostedNav } from '@/components/frostedNav';
 import { GooeyMenu } from '@/components/gooey-menu';
@@ -53,7 +54,8 @@ export default function Home() {
       {/* <Tooltip />  */}
       {/* <HorizonatialTooltip /> */}
       {/* <Showcase/> */}
-      <ReceiveButton/>
+      {/* <ReceiveButton/> */}
+      <CreateCommunity/>
     </div>
   );
 }

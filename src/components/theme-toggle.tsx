@@ -41,7 +41,7 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        'absolute right-10 bottom-10 z-100 cursor-pointer rounded-full border transition-transform duration-100 ease-out will-change-transform outline-none hover:scale-101 active:scale-98',
+        'absolute md:right-10 md:bottom-10 right-6 bottom-5 z-100 cursor-pointer rounded-full border transition-transform duration-100 ease-out will-change-transform outline-none hover:scale-101 active:scale-98',
         'border-neutral-300 bg-neutral-100 text-neutral-800',
         'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100',
       )}
