@@ -149,13 +149,12 @@ export const CreateCommunity = () => {
                         <div
                           id="pricingAccess"
                           {...register('pricingAccess')}
-                          className="grid w-full grid-cols-3 rounded-full bg-neutral-200 p-1 dark:bg-neutral-950"
+                          className="grid w-full grid-cols-3 rounded-full bg-gray-100 p-1 dark:bg-neutral-950"
                         >
                           {pricingOptions.map((item, idx) => {
                             const isActive = field.value === item.value;
                             return (
                               <div
-                                defaultValue={item.value}
                                 key={idx}
                                 className="div-center relative col-span-1 h-10 w-full cursor-pointer rounded-full md:h-12"
                                 onClick={() => field.onChange(item.value)}

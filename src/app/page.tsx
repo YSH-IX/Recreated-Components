@@ -12,8 +12,6 @@ import { Slider } from '@/components/slider';
 import { Tooltip } from '@/components/tooltip';
 
 export default function Home() {
-
-
   return (
     <div className="div-center min-h-fit w-full flex-col gap-20 bg-gray-100 sm:h-screen">
       {/* <SocialsMenu /> */}
@@ -34,7 +32,6 @@ export default function Home() {
       {/* <ScrollSection /> */}
       {/* <Box /> */}
       {/* <Buttons />  */}
-
       {/* <ControlButtons /> */}
       {/* <Bits /> */}
 
@@ -46,7 +43,7 @@ export default function Home() {
       {/* <Slider /> */}
       {/* <LayoutCard /> */}
       {/* <SharedMenu />  */}
-      {/* <Nav />  */}
+      <Nav />
       {/* <MultiStepBtn /> */}
       {/* <Expandables /> */}
       {/* <ScrollBar /> */}
@@ -55,7 +52,7 @@ export default function Home() {
       {/* <HorizonatialTooltip /> */}
       {/* <Showcase/> */}
       {/* <ReceiveButton/> */}
-      <CreateCommunity/>
+      {/* <CreateCommunity/> */}
     </div>
   );
 }
