@@ -14,12 +14,12 @@ export const Nav = () => {
 
   const [selected, setSelected] = useState<number | null>(0);
   return (
-    <div className="div-center min-h-screen w-full bg-gray-100 p-2 dark:bg-neutral-900">
+    <div className="div-center min-h-screen w-full bg-gray-100 p-2 bg-primary">
       {/* Skeumorphic version */}
       <nav
         className={cn(
-          'font-inter flex w-full max-w-md items-center rounded-[18px] border p-1.5 dark:border-neutral-900',
-          'shadow-[inset_0_-2px_1px_0_rgba(200,200,200,0.2),inset_0_2px_1px_0_rgba(0,0,0,1)]',
+          'font-inter flex w-fit items-center rounded-[18px] border p-1.5 dark:border-neutral-900',
+          'shadow-[inset_0_-2px_1px_0_rgba(200,200,200,0.2),inset_0_2px_1px_0_rgba(0,0,0,0.8)]',
           'dark:bg-linear-to-b from-neutral-950 via-neutral-950/90 to-neutral-950/80',
         )}
       >
@@ -28,7 +28,7 @@ export const Nav = () => {
             onClick={() => setSelected(idx)}
             key={idx}
             href={nav.href}
-            className="group relative w-full text-center outline-none dark:text-neutral-500"
+            className="group relative  text-center outline-none dark:text-neutral-500"
           >
             {selected === idx && (
               <motion.div
@@ -36,13 +36,13 @@ export const Nav = () => {
                 className={cn(
                   'absolute inset-0 rounded-xl',
                   'bg-linear-to-b from-neutral-800 to-neutral-900',
-                  'shadow-[inset_0_1px_1px_0_rgba(200,200,200,0.1),inset_0_-1px_1px_0_rgba(0,0,0,0.4)]',
+                  'shadow-[inset_0_1.5px_1px_0_rgba(200,200,200,0.2),inset_0_-1px_1px_0_rgba(0,0,0,0.4)]',
                 )}
               ></motion.div>
             )}
             <div
               className={cn(
-                'relative py-2 text-sm transition-colors duration-200 ease-out',
+                'relative py-2 px-4 text-sm transition-colors duration-200 ease-out',
                 selected === idx
                   ? 'dark:text-neutral-300'
                   : 'group-hover:text-neutral-300',
