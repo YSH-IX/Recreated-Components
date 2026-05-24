@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Instrument_Serif, Inter } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from 'next-themes';
 import { Providers } from '@/components/providers';
 import { ThemeToggle } from '@/components/theme-toggle';
 
@@ -14,6 +13,7 @@ const geist = Geist({
   subsets: ['latin'],
   variable: '--font-geist',
 });
+
 const instrument_Serif = Instrument_Serif({
   subsets: ['latin'],
   variable: '--font-instrument',

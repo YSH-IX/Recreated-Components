@@ -1,3 +1,4 @@
+import { AppleCarousel } from '@/components/appleCarousel';
 import { CreateCommunity } from '@/components/createCommunity';
 import { Expandables } from '@/components/expandables';
 import { FrostedNav } from '@/components/frostedNav';
@@ -7,6 +8,7 @@ import { LayoutCard } from '@/components/layout-card';
 import { Nav } from '@/components/nav';
 import { ReceiveButton } from '@/components/receiveButton';
 import { ScrollBar } from '@/components/scrollBar';
+import { ScrollSection } from '@/components/scrollSection';
 import { Showcase } from '@/components/showcase';
 import { Slider } from '@/components/slider';
 import { Tooltip } from '@/components/tooltip';
@@ -43,7 +45,8 @@ export default function Home() {
       {/* <Slider /> */}
       {/* <LayoutCard /> */}
       {/* <SharedMenu />  */}
-      <Nav />
+      {/* <Nav /> */}
+      <AppleCarousel />
       {/* <MultiStepBtn /> */}
       {/* <Expandables /> */}
       {/* <ScrollBar /> */}
