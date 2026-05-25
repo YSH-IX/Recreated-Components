@@ -1,10 +1,12 @@
 import { AppleCarousel } from '@/components/appleCarousel';
 import { CreateCommunity } from '@/components/createCommunity';
+import { CursorFollow } from '@/components/cursorFollow';
 import { Expandables } from '@/components/expandables';
 import { FrostedNav } from '@/components/frostedNav';
 import { GooeyMenu } from '@/components/gooey-menu';
 import { HorizonatialTooltip } from '@/components/horizontalToolTip';
 import { LayoutCard } from '@/components/layout-card';
+import { MagneticButton } from '@/components/magnetic-button';
 import { Nav } from '@/components/nav';
 import { ReceiveButton } from '@/components/receiveButton';
 import { ScrollBar } from '@/components/scrollBar';
@@ -46,7 +48,9 @@ export default function Home() {
       {/* <LayoutCard /> */}
       {/* <SharedMenu />  */}
       {/* <Nav /> */}
-      <AppleCarousel />
+      {/* <AppleCarousel /> */}
+      <MagneticButton />
+      {/* <CursorFollow /> */}
       {/* <MultiStepBtn /> */}
       {/* <Expandables /> */}
       {/* <ScrollBar /> */}

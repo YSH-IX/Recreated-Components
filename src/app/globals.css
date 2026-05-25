@@ -9,11 +9,12 @@
 
 :root {
   --primary: var(--color-gray-100);
+  --cursor: black;
 }
 
 .dark {
   --primary: var(--color-neutral-900);
-  
+  --cursor: white;
 }
 
 @theme inline {
@@ -24,6 +25,7 @@
 
 @theme {
   --color-primary: var(--primary);
+  --color-cursor: var(--cursor);
   --color-background-100: #111111;
   --font-inter: var(--font-inter);
   --text-xxs: 10px;

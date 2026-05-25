@@ -184,9 +184,8 @@ export const AppleCarousel = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
-              type: 'spring',
-              stiffness: 100,
-              damping: 36,
+                duration: 0.6,
+                ease: "easeInOut"
             }}
             className="text-5xl font-semibold tracking-tight text-neutral-900"
           >
@@ -208,10 +207,12 @@ export const AppleCarousel = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{
-                type: 'spring',
                 delay: 0.15 * idx,
-                stiffness: 100,
-                damping: 36,
+                duration: 0.6,
+                ease: "easeInOut"
+                // type: 'spring',
+                // stiffness: 100,
+                // damping: 36,
               }}
               className="relative flex h-148 w-82 shrink-0 cursor-pointer snap-start overflow-hidden rounded-4xl p-6 outline-none"
             >
