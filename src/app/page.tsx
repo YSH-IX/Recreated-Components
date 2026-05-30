@@ -14,6 +14,7 @@ import { ScrollSection } from '@/components/scrollSection';
 import { Showcase } from '@/components/showcase';
 import { Slider } from '@/components/slider';
 import { Tooltip } from '@/components/tooltip';
+import { TooltipCard } from '@/components/tooltipCard';
 
 export default function Home() {
   return (
@@ -49,7 +50,8 @@ export default function Home() {
       {/* <SharedMenu />  */}
       {/* <Nav /> */}
       {/* <AppleCarousel /> */}
-      <MagneticButton />
+      {/* <MagneticButton /> */}
+      <TooltipCard />
       {/* <CursorFollow /> */}
       {/* <MultiStepBtn /> */}
       {/* <Expandables /> */}
