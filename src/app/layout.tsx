@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Instrument_Serif, Inter } from 'next/font/google';
+import { Geist, Geist_Mono, Instrument_Serif, Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -7,17 +7,25 @@ import { ThemeToggle } from '@/components/theme-toggle';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  weight: ['400', '500', '600'],
 });
 
 const geist = Geist({
   subsets: ['latin'],
   variable: '--font-geist',
+  weight: ['400', '500', '600'],
 });
 
 const instrument_Serif = Instrument_Serif({
   subsets: ['latin'],
   variable: '--font-instrument',
   weight: ['400'],
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geistMono',
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +42,7 @@ export default function RootLayout({
     <html
       suppressHydrationWarning
       lang="en"
-      className={`h-full antialiased ${inter.variable} ${geist.variable} ${instrument_Serif.variable}`}
+      className={`h-full antialiased ${inter.variable} ${geist.variable} ${instrument_Serif.variable} ${geistMono.variable}`}
     >
       <body className="relative flex min-h-full flex-col">
         <Providers>

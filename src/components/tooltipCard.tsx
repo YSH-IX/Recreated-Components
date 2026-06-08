@@ -79,7 +79,7 @@ export const TooltipCard = () => {
           is a great service, but sometimes it's not available.
         </div>
 
-        {/* <div>
+        <div>
           That is when we approached Tyler for a cute little testimonial.
           Instead of a
           <HoverCard
@@ -95,7 +95,7 @@ export const TooltipCard = () => {
           </HoverCard>
           , he started yapping about project mayhem and how we should be using
           our skills to build a better future.
-        </div> */}
+        </div>
       </div>
     </div>
   );
@@ -118,8 +118,8 @@ const HoverCard = ({
     if (!rect) return;
     setHovered(true);
 
-    x.set(e.clientX - rect.left / 2 - rect.width / 2);
-    y.set(e.clientY - rect.top - rect.height / 2 - 10);
+    x.set(e.clientX - rect.left - rect.width / 2);
+    y.set(e.clientY - rect.top - 20);
   };
   const handleMouseLeave = () => {
     setHovered(false);

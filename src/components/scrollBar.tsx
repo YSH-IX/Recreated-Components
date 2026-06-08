@@ -7,7 +7,7 @@ import {
   useTransform,
 } from 'motion/react';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { RefObject, useRef, useState } from 'react';
 
 type facts = {
   title: string;
@@ -16,14 +16,7 @@ type facts = {
   content: string;
 };
 export const ScrollBar = () => {
-  const { scrollYProgress } = useScroll();
-  const [value, setValue] = useState<number>(1);
-  const scroll = useTransform(scrollYProgress, [0, 1], [1, 100]);
-
-  const scrollHeight = useMotionTemplate`${scroll}%`;
-  useMotionValueEvent(scroll, 'change', (latest) => {
-    setValue(Math.floor(latest));
-  });
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const designEngineeringPoints: facts[] = [
     {
@@ -144,49 +137,25 @@ export const ScrollBar = () => {
             `,
     },
   ];
-  console.log(useMotionTemplate`scrollValue`);
   return (
-    <div className={cn('relative h-full w-full bg-neutral-950 px-4.5 py-5')}>
-      {/* Motion SCROLLBAR */}
+    <div className={cn('relative h-dvh w-full bg-neutral-950')}>
+      <ScrollBarComponent ref={containerRef} />
       <div
+        ref={containerRef}
         className={cn(
-          'div-center fixed top-1/2 right-10 z-1 h-120 w-full max-w-[120px] -translate-y-1/2 rounded-4xl bg-neutral-950 py-10 text-neutral-500',
-          'shadow-[0_1px_2px_1px_rgba(0,0,0,0.1),0_2px_4px_0_rgba(0,0,0,0.1),inset_0_0_1px_1px_rgba(180,180,180,0.1)]',
+          'font-inter flex h-screen w-full list-decimal flex-col items-start gap-10 rounded-lg bg-[#0a0a0a] px-16 pt-18 pb-10 selection:bg-neutral-200 selection:text-neutral-900 [&::-webkit-scrollbar]:hidden',
+          'overflow-y-scroll',
+          'shadow-[inset_0_0_1px_1px_rgba(190,190,190,0.1)]',
         )}
       >
-        <div
-          className={cn(
-            'flex h-full w-[10px] items-start rounded-sm bg-neutral-800',
-          )}
-        >
-          <motion.div
-            className="relative w-full rounded-t-sm bg-linear-to-b from-orange-500 via-orange-600 to-orange-700"
-            style={{
-              height: scrollHeight,
-            }}
-          >
-            <motion.div className="absolute bottom-0 left-1/2 flex h-[2px] w-[28px] -translate-x-1/2 items-center rounded-xs bg-orange-700">
-              <motion.span className="absolute right-8 text-sm font-medium text-orange-600">
-                {`${value}%`}
-              </motion.span>
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-      <div
-        className={cn(
-          'flex h-fit w-full list-decimal flex-col items-start gap-10 rounded-4xl bg-[#101010] px-16 pt-18 pb-10 font-sans selection:bg-neutral-200 selection:text-neutral-900',
-          'overflow-y-auto shadow-[inset_0_0_1px_1px_rgba(220,220,220,0.1)]',
-          '[&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-thumb]:hover:bg-orange-600 [&::-webkit-scrollbar-track]:bg-red-800',
-        )}
-      >
+        {/* Headings */}
         <div className="mb-12 flex flex-col gap-6">
-          <h1 className="text-4xl font-semibold tracking-tight text-neutral-100">
+          <h1 className="text-5xl font-semibold tracking-tight text-neutral-100">
             Design
             <span className="mx-2 text-3xl">×</span>
             Engineering
           </h1>
-          <h2 className="text-xl text-neutral-300">
+          <h2 className="text-[32px] font-medium text-neutral-400">
             Where Creativity Meets Technical Excellence
           </h2>
         </div>
@@ -201,7 +170,7 @@ export const ScrollBar = () => {
 
             <div className="flex flex-col items-start gap-6">
               <div className="flex flex-col items-start gap-2">
-                <h2 className="mb-1.5 text-2xl font-medium text-neutral-200">
+                <h2 className="mb-1 text-2xl font-medium text-neutral-200">
                   {item.title}
                 </h2>
                 <h3 className="text-xl text-neutral-400">{item.subtitle}</h3>
@@ -209,19 +178,63 @@ export const ScrollBar = () => {
                   {item.tags.map((inner, idx) => (
                     <span
                       key={idx}
-                      className="rounded-lg border border-neutral-800 px-1.5 py-0.5 text-xs/loose font-medium text-neutral-500 transition-colors duration-100 ease-out select-none hover:text-neutral-400"
+                      className="rounded-lg border border-neutral-800 px-1.5 py-0.5 text-xs/loose font-medium text-neutral-400 transition-colors duration-100 ease-out select-none hover:text-neutral-400"
                     >
                       {inner}
                     </span>
                   ))}
                 </p>
               </div>
-              <p className="max-w-5xl text-lg/loose text-balance text-neutral-300">
+              <p className="max-w-5xl text-base/loose text-balance text-neutral-400">
                 {item.content}
               </p>
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  );
+};
+
+const ScrollBarComponent = ({
+  ref,
+}: {
+  ref: RefObject<HTMLDivElement | null>;
+}) => {
+  const [value, setValue] = useState<number>(1);
+
+  const { scrollYProgress } = useScroll({
+    container: ref,
+  });
+  const scroll = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
+  const scrollHeight = useMotionTemplate`${scroll}%`;
+  useMotionValueEvent(scroll, 'change', (latest) => {
+    setValue(Math.floor(latest));
+  });
+
+  return (
+    <div
+      className={cn(
+        'div-center fixed top-1/2 right-10 z-1 h-100 w-full max-w-[80px] -translate-y-1/2 rounded-2xl bg-neutral-950 py-8 text-neutral-500',
+        'shadow-[0_1px_2px_1px_rgba(0,0,0,0.1),0_2px_4px_0_rgba(0,0,0,0.1),inset_0_0_1px_1px_rgba(180,180,180,0.1)]',
+      )}
+    >
+      <div
+        className={cn('flex h-full w-1 items-start rounded-sm bg-neutral-800')}
+      >
+        <motion.div
+          className="relative w-full rounded-t-sm bg-linear-to-b from-orange-500 via-orange-600 to-orange-700"
+          style={{
+            height: scrollHeight,
+          }}
+        >
+          <motion.div className="absolute bottom-0 left-1/2 flex h-[2px] w-4 -translate-x-1/2 items-center rounded-xs bg-orange-700">
+            <motion.span className="absolute right-5 text-xs font-semibold text-orange-600">
+              {`${value}`}
+            </motion.span>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

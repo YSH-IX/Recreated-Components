@@ -14,7 +14,7 @@ export const Nav = () => {
 
   const [selected, setSelected] = useState<number | null>(0);
   return (
-    <div className="div-center bg-primary min-h-screen w-full p-2">
+    <div className="div-center bg-primary h-dvh w-full p-2">
       {/* Skeumorphic version */}
       <nav
         className={cn(
@@ -49,7 +49,7 @@ export const Nav = () => {
                 'relative px-4 py-2 text-sm transition-colors duration-200 ease-out',
                 selected === idx
                   ? 'text-neutral-800 dark:text-neutral-300'
-                  : 'group-hover:text-neutral-800',
+                  : 'group-hover:text-neutral-800 dark:group-hover:text-neutral-200',
               )}
             >
               {nav.title}

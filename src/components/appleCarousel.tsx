@@ -49,9 +49,6 @@ export const AppleCarousel = () => {
 
   const [open, setOpen] = useState(false);
 
-  /**
-   * Lock body scroll when modal opens
-   */
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';

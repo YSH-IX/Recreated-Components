@@ -15,7 +15,7 @@ export const Buttons = () => {
     tap: {
       scale: 0.99,
       transition: {
-        duration: 0.2,
+        duration: 0.1,
         ease: 'easeOut',
       },
     },
@@ -42,30 +42,30 @@ export const Buttons = () => {
   }
 
   return (
-    <div className="div-center min-h-screen w-full bg-neutral-100 font-sans">
+    <div className="div-center bg-primary min-h-screen w-full">
       {/* Buttons Container */}
       <div
         className={cn(
-          'flex max-h-200 min-h-40 w-full max-w-md flex-col items-start gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-10 text-base font-medium',
-          'shadow-[0_1px_2px_0_rgba(12,12,12,0.2),0_3px_6px_0_rgba(12,12,12,0.2)]',
+          'flex max-h-200 min-h-40 w-full max-w-md flex-col items-start gap-4 rounded-2xl bg-white p-10 text-base font-medium',
+          'shadow-[0_0_1px_0_rgba(20,20,20,0.1),0_1px_4px_0_rgba(20,20,20,0.1)]',
         )}
       >
         {/* Hold to delete Component  */}
-        <div className="flex w-full items-center justify-center">
+        <div className="font-inter flex w-full items-center justify-center">
           <motion.button
             variants={parentVariants}
             initial="initial"
             whileTap="tap"
-            className="relative flex cursor-pointer appearance-none items-center gap-1.5 overflow-hidden rounded-full bg-neutral-200 px-5 py-2.5 text-neutral-700"
+            className="relative flex cursor-pointer appearance-none items-center gap-1.5 overflow-hidden rounded-full bg-neutral-200 py-2.5 pr-6 pl-5 text-neutral-700 outline-none"
             style={{
               willChange: 'transform',
             }}
           >
             <TrashIcon
-              size={32}
-              weight="regular"
+              size={28}
+              weight="bold"
               color="currentColor"
-              className="size-5.5"
+              className="size-5.5 fill-neutral-700/90"
             />
 
             <span>Hold to delete</span>
@@ -74,8 +74,8 @@ export const Buttons = () => {
               className="absolute inset-0 flex cursor-pointer items-center gap-1.5 rounded-full bg-red-200 px-5 py-3 text-[#e5484d]"
             >
               <TrashIcon
-                size={32}
-                weight="regular"
+                size={28}
+                weight="bold"
                 color="currentColor"
                 className="size-5.5"
               />
@@ -85,7 +85,7 @@ export const Buttons = () => {
           </motion.button>
         </div>
         {/* Copy button */}
-        <div className="mx-auto flex w-full max-w-46 items-center justify-between rounded-2xl bg-neutral-200 p-2">
+        {/* <div className="mx-auto flex w-full max-w-46 items-center justify-between rounded-2xl bg-neutral-200 p-2">
           <motion.button
             initial={{
               scale: 1,
@@ -161,32 +161,11 @@ export const Buttons = () => {
             <AnimatePresence mode="wait">
               {copied ? (
                 <motion.span
-                  //   initial={{
-                  //     scale: 0.8,
-                  //     filter: 'blur(1px)',
-                  //     opacity: 1,
-                  //   }}
-                  //   animate={{
-                  //     scale: 1,
-                  //     filter: 'blur(0px)',
-                  //     opacity: 1,
-                  //   }}
-                  //   transition={{
-                  //     duration: 10,
-                  //     ease: 'easeOut',
-                  //   }}
-                  //   exit={{
-                  //     scale: 0,
-                  //     filter: 'blur(4px)',
-                  //     opacity: 0.2,
-                  //     // transition: {
-                  //     //   duration: 0.1,
-                  //     // },
-                  //   }}
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.8, opacity: 0 }}
                   transition={{ duration: 0.15 }}
+                  layoutId="icon"
                 >
                   <CheckIcon
                     size={32}
@@ -197,32 +176,11 @@ export const Buttons = () => {
                 </motion.span>
               ) : (
                 <motion.span
-                  //   initial={{
-                  //     scale: 0.8,
-                  //     filter: 'blur(1px)',
-                  //     opacity: 1,
-                  //   }}
-                  //   animate={{
-                  //     scale: 1,
-                  //     filter: 'blur(0px)',
-                  //     opacity: 1,
-                  //   }}
-                  //   exit={{
-                  //     scale: 0,
-                  //     filter: 'blur(4px)',
-                  //     opacity: 0.2,
-                  //     // transition: {
-                  //     //   duration: 0.1,
-                  //     // },
-                  //   }}
-                  //   transition={{
-                  //     duration: 10,
-                  //     ease: 'easeOut',
-                  //   }}
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.8, opacity: 0 }}
                   transition={{ duration: 0.15 }}
+                  layoutId="icon"
                 >
                   <CopySimpleIcon
                     size={32}
@@ -234,7 +192,10 @@ export const Buttons = () => {
               )}
             </AnimatePresence>
           </motion.button>
-        </div>
+        </div> */}
+        <button className="font-geistMono mx-auto bg-neutral-400 px-5 py-2">
+          Motion+
+        </button>
       </div>
     </div>
   );

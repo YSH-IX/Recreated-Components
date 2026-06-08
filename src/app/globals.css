@@ -28,6 +28,7 @@
   --color-cursor: var(--cursor);
   --color-background-100: #111111;
   --font-inter: var(--font-inter);
+  --font-geistMono: var(--font-geistMono);
   --text-xxs: 10px;
   --text-xsm: 9px;
   --animate-gradient: gradient 8s linear infinite;
