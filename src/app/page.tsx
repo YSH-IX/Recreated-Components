@@ -7,6 +7,7 @@ import { Expandables } from '@/components/expandables';
 import { FrostedNav } from '@/components/frostedNav';
 import { GooeyMenu } from '@/components/gooey-menu';
 import { HorizonatialTooltip } from '@/components/horizontalToolTip';
+import InputBox from '@/components/inputBox';
 import { LayoutCard } from '@/components/layout-card';
 import { MagneticButton } from '@/components/magnetic-button';
 import { Nav } from '@/components/nav';
@@ -57,7 +58,7 @@ export default function Home() {
       {/* <CursorFollow /> */}
       {/* <MultiStepBtn /> */}
       {/* <Expandables /> */}
-      <ScrollBar />
+      {/* <ScrollBar /> */}
       {/* <GooeyMenu /> */}
       {/* <Tooltip />  */}
       {/* <HorizonatialTooltip /> */}
@@ -66,6 +67,7 @@ export default function Home() {
       {/* <CreateCommunity/> */}
       {/* <DragCards/> */}
       {/* <SubSelectToggle /> */}
+      <InputBox/>
     </div>
   );
 }

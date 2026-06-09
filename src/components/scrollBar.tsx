@@ -138,24 +138,25 @@ export const ScrollBar = () => {
     },
   ];
   return (
-    <div className={cn('relative h-dvh w-full bg-neutral-950')}>
+    <div className={cn('relative h-dvh w-full bg-neutral-100 dark:bg-neutral-950 [(--background:#fafafa)] dark:[(--background:#0a0a0a)]')}>
       <ScrollBarComponent ref={containerRef} />
       <div
         ref={containerRef}
         className={cn(
-          'font-inter flex h-screen w-full list-decimal flex-col items-start gap-10 rounded-lg bg-[#0a0a0a] px-16 pt-18 pb-10 selection:bg-neutral-200 selection:text-neutral-900 [&::-webkit-scrollbar]:hidden',
+          'font-inter flex h-screen w-full list-decimal flex-col items-start gap-2 rounded-lg  px-6 selection:bg-neutral-200 bg-[var(--background)] selection:text-neutral-900 md:gap-10 md:px-10 lg:px-16 [&::-webkit-scrollbar]:hidden',
           'overflow-y-scroll',
           'shadow-[inset_0_0_1px_1px_rgba(190,190,190,0.1)]',
+          'pt-10 pb-6 md:pt-18 md:pb-10',
         )}
       >
         {/* Headings */}
         <div className="mb-12 flex flex-col gap-6">
-          <h1 className="text-5xl font-semibold tracking-tight text-neutral-100">
+          <h1 className="md:text-4xl text-3xl font-semibold tracking-tight text-neutral-100">
             Design
-            <span className="mx-2 text-3xl">×</span>
+            <span className="mx-2 md:text-3xl text-xl">×</span>
             Engineering
           </h1>
-          <h2 className="text-[32px] font-medium text-neutral-400">
+          <h2 className="md:text-2xl text-xl tracking-tight text-neutral-300">
             Where Creativity Meets Technical Excellence
           </h2>
         </div>
@@ -164,16 +165,18 @@ export const ScrollBar = () => {
             key={item.title + idx}
             className="relative flex items-start gap-2 py-4 pl-8 text-neutral-200"
           >
-            <div className="font-meidum absolute left-0 bg-linear-to-br from-neutral-100 via-neutral-200 to-neutral-300 bg-clip-text text-2xl font-semibold text-transparent">
+            <div className="font-meidum absolute left-0 bg-linear-to-br from-neutral-100 via-neutral-200 to-neutral-300 bg-clip-text text-xl md:text-2xl font-semibold text-transparent">
               {`${idx + 1}.`}
             </div>
 
             <div className="flex flex-col items-start gap-6">
               <div className="flex flex-col items-start gap-2">
-                <h2 className="mb-1 text-2xl font-medium text-neutral-200">
+                <h2 className="mb-1 md:text-2xl  text-xl font-medium text-neutral-200">
                   {item.title}
                 </h2>
-                <h3 className="text-xl text-neutral-400">{item.subtitle}</h3>
+                <h3 className="text-base  text-neutral-200">
+                  {item.subtitle}
+                </h3>
                 <p className="mt-2 flex items-center gap-2">
                   {item.tags.map((inner, idx) => (
                     <span
@@ -185,7 +188,7 @@ export const ScrollBar = () => {
                   ))}
                 </p>
               </div>
-              <p className="max-w-5xl text-base/loose text-balance text-neutral-400">
+              <p className="max-w-5xl text-base/loose text-balance text-neutral-300">
                 {item.content}
               </p>
             </div>
@@ -196,6 +199,7 @@ export const ScrollBar = () => {
   );
 };
 
+// This is the Scroll Bar Component
 const ScrollBarComponent = ({
   ref,
 }: {
@@ -230,7 +234,7 @@ const ScrollBarComponent = ({
           }}
         >
           <motion.div className="absolute bottom-0 left-1/2 flex h-[2px] w-4 -translate-x-1/2 items-center rounded-xs bg-orange-700">
-            <motion.span className="absolute right-5 text-xs font-semibold text-orange-600">
+            <motion.span className="absolute right-5 text-xs font-bold text-orange-600">
               {`${value}`}
             </motion.span>
           </motion.div>

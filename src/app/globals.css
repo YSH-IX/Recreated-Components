@@ -10,11 +10,13 @@
 :root {
   --primary: var(--color-gray-100);
   --cursor: black;
+  --background: var(--color-neutral-100);
 }
 
 .dark {
   --primary: var(--color-neutral-900);
   --cursor: white;
+  --background: var(--color-neutral-950);
 }
 
 @theme inline {
@@ -26,7 +28,7 @@
 @theme {
   --color-primary: var(--primary);
   --color-cursor: var(--cursor);
-  --color-background-100: #111111;
+  --color-background: var(--background);
   --font-inter: var(--font-inter);
   --font-geistMono: var(--font-geistMono);
   --text-xxs: 10px;
