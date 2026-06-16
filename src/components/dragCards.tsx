@@ -1,6 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { motion } from 'motion/react';
+import { animate } from 'motion';
+import { motion, useMotionValue, useTransform } from 'motion/react';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
@@ -44,38 +45,100 @@ export const DragCards = () => {
   ];
   const [stack, setStack] = useState(INITIAL_STACK);
   return (
-    <div className="bg-primary div-center h-dvh w-full">
+    <div className="bg-primary div-center h-dvh w-full overflow-hidden">
       <div className="relative h-96 w-80 rounded-2xl">
         {stack.map((item, idx) => (
-          <div
-            className="absolute inset-0"
-            style={{
-              y: idx,
-              scale: (100 - idx) * 0.01,
+          <StackedCard
+            className={'cursor-grab active:cursor-grabbing'}
+            key={item.label}
+            label={item.label}
+            description={item.description}
+            img={item.img}
+            idx={idx}
+            total={stack.length}
+            onSendBack={() => {
+              idx === 0 ? setStack((s) => [...s.slice(1), s[0]]) : undefined;
             }}
-          >
-            <div className="relative min-h-96 rounded-2xl bg-black/20">
-              <Image
-                fill
-                key={item.label}
-                src={item.img}
-                alt={item.label}
-                draggable={false}
-                loading="eager"
-                priority
-                className="inset-0 rounded-2xl object-cover"
-              />
-
-              <div className="font-inter absolute bottom-10 left-4 flex flex-col items-start gap-1">
-                <h2 className="relative z-10 text-xl font-medium">
-                  {item.label}
-                </h2>
-                <p className="relative z-10 text-sm">{item.description}</p>
-              </div>
-            </div>
-          </div>
+          />
         ))}
       </div>
     </div>
+  );
+};
+
+const STACK_SPRING = {
+  type: 'spring' as const,
+  damping: 32,
+  stiffness: 380,
+};
+
+interface CardProps {
+  label: string;
+  img: string;
+  idx: number;
+  description: string;
+  className: string;
+  total: number;
+  onSendBack: () => void;
+}
+const StackedCard = ({
+  label,
+  img,
+  description,
+  idx,
+  className,
+  onSendBack,
+  total,
+}: CardProps) => {
+  const x = useMotionValue(0);
+  const rotate = useTransform(x, [-160, 160], [-12, 12]);
+  const isFirst = idx === 0;
+  return (
+    <motion.div
+      drag={isFirst ? 'x' : false}
+      dragConstraints={{ left: -160, right: 160 }}
+      dragElastic={0.08}
+      onDragEnd={() => {
+        if (!isFirst || !onSendBack) return;
+        onSendBack();
+        animate(x, 0, STACK_SPRING);
+      }}
+      className={cn(
+        'absolute inset-0 rounded-2xl bg-neutral-950 ring-2 ring-neutral-100 select-none',
+        className,
+      )}
+      style={{
+        zIndex: total - idx,
+        rotate: rotate,
+        x,
+      }}
+      animate={{
+        y: `${-idx * 5.2}%`,
+        scale: 1 - idx * 0.05,
+      }}
+      transition={STACK_SPRING}
+    >
+      <div className="relative min-h-96 rounded-2xl bg-black/20">
+        <Image
+          fill
+          key={label}
+          src={img}
+          alt={label}
+          draggable={false}
+          loading="eager"
+          priority
+          className="pointer-events-none absolute inset-0 rounded-2xl mask-b-from-50% mask-b-to-90% object-cover"
+        />
+
+        <div className="font-inter absolute bottom-0 left-0 flex flex-col items-start gap-1 p-4 text-neutral-100">
+          <h2 className="relative z-10 text-2xl font-medium tracking-tight text-shadow-black/20 text-shadow-xs">
+            {label}
+          </h2>
+          <p className="relative z-10 text-sm font-light text-shadow-black/20 text-shadow-xs">
+            {description}
+          </p>
+        </div>
+      </div>
+    </motion.div>
   );
 };

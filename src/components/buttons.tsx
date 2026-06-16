@@ -47,7 +47,7 @@ export const Buttons = () => {
       <div
         className={cn(
           'flex max-h-200 min-h-40 w-full max-w-md flex-col items-start gap-4 rounded-2xl bg-white p-10 text-base font-medium',
-          'shadow-[0_0_1px_0_rgba(20,20,20,0.1),0_1px_4px_0_rgba(20,20,20,0.1)]',
+          'shadow-[0_0_1px_0_rgba(20,20,20,0.1),0_1px_4px_0_rgba(20,20,20,0.1)] [--lines:#111111]',
         )}
       >
         {/* Hold to delete Component  */}
@@ -193,10 +193,32 @@ export const Buttons = () => {
             </AnimatePresence>
           </motion.button>
         </div> */}
-        <button className="font-geistMono mx-auto bg-neutral-400 px-5 py-2">
+        <button className="font-geistMono relative mx-auto bg-[repeating-linear-gradient(135deg,rgba(20,20,20,0.2)_0,rgba(20,20,20,0.2)_1px,transparent_1px,transparent_6px)] px-5 py-2 bg-neutral-400">
+          <AngularSVG className={"absolute top-0 left-0 rotate-90"} />
+          <AngularSVG className={"absolute bottom-0 left-0 "} />
+          <AngularSVG className={"absolute -top-1 -right-1 rotate-180"} />
+          <AngularSVG className={"absolute -bottom-1 -right-1 rotate-270"} />
+          <span className='text-sm text-neutral-950'>
+
           Motion+
+          </span>
         </button>
       </div>
     </div>
+  );
+};
+
+const AngularSVG = ({ className }: { className: string }) => {
+  return (
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 13 13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path d="M0.5 0V12H12.5" stroke="currentColor" />
+    </svg>
   );
 };

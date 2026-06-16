@@ -3,6 +3,7 @@ import { Buttons } from '@/components/buttons';
 import { CreateCommunity } from '@/components/createCommunity';
 import { CursorFollow } from '@/components/cursorFollow';
 import { DragCards } from '@/components/dragCards';
+import { ElasticSlider } from '@/components/elasticSlider';
 import { Expandables } from '@/components/expandables';
 import { FrostedNav } from '@/components/frostedNav';
 import { GooeyMenu } from '@/components/gooey-menu';
@@ -65,9 +66,10 @@ export default function Home() {
       {/* <Showcase/> */}
       {/* <ReceiveButton/> */}
       {/* <CreateCommunity/> */}
-      {/* <DragCards/> */}
+      <DragCards/>
       {/* <SubSelectToggle /> */}
-      <InputBox/>
+      {/* <InputBox/> */}
+      {/* <ElasticSlider/> */}
     </div>
   );
 }
