@@ -10,17 +10,17 @@ import {
   IconProps,
   NotePencilIcon,
 } from '@phosphor-icons/react';
-import Image from 'next/image';
 import { ForwardRefExoticComponent } from 'react';
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
 type NavItem = {
   label: string;
   icon: ForwardRefExoticComponent<IconProps>;
 };
 
-export const FrostedNav = () => {
-  const navItems: NavItem[] = [
+export const FrostedNav = ({ navList }: { navList?: NavItem[] }) => {
+  const DEMO_LIST: NavItem[] = [
     {
       label: 'Home',
       icon: HouseIcon,
@@ -42,59 +42,26 @@ export const FrostedNav = () => {
       icon: UserIcon,
     },
   ];
+  if (navList === undefined) {
+    navList = DEMO_LIST;
+  }
   const [selected, setSelected] = useState<string>('Home');
-  const [create, setCreate] = useState<boolean>(false);
   return (
     <div
       className={cn(
         'flex justify-center',
-        'font-inter relative h-screen w-full items-end bg-neutral-800 px-4 py-12',
+        'font-inter relative h-dvh w-full items-end bg-neutral-800 px-4 py-12',
       )}
     >
-      <Image
-        src={'/anakin.jpg'}
-        alt={'anakin.jpg'}
-        fill
-        className="absolute inset-2 object-cover"
-      ></Image>
-      <div className="flex flex-col items-end justify-center gap-4">
-        <button
-          onClick={() => {
-            setCreate((val) => !val);
-            setSelected(create ? 'Home' : '');
-          }}
-          className={cn(
-            // Layout & positioning
-            'rounded-full',
-            'mr-4 appearance-none outline-none',
-          )}
-        >
-          <div
-            className={cn(
-              'rounded-full',
-              'bg-white/5 backdrop-blur-xl',
-              'p-3.5 md:p-4',
-              'hover:bg-neutral-500/50 active:bg-neutral-500/50',
-              'shadow-[inset_0_0_0.5px_0_rgba(255,255,255,0.1),inset_1px_1px_1px_0_rgba(255,255,255,0.2),inset_-1px_-1px_1px_0_rgba(255,255,255,0.2)]',
-              'transition-all duration-150 ease-out',
-            )}
-          >
-            <NotePencilIcon
-              size={20}
-              weight={create ? 'fill' : 'regular'}
-              color="currentColor"
-              className="size-5.5 rounded-full fill-neutral-200"
-            />
-          </div>
-        </button>
+      <div className="flex flex-col items-end justify-center">
         <div
           className={cn(
             'relative',
             'shadow-[inset_0_0_0.5px_0_rgba(255,255,255,0.1),inset_0.5px_0.5px_0.5px_0_rgba(255,255,255,0.2),inset_-0.5px_-0.5px_0.5px_0_rgba(255,255,255,0.2)]',
-            'grid grid-cols-5 rounded-full bg-white/5 p-1 gap-1 backdrop-blur-lg',
+            'grid grid-cols-5 gap-0.5 rounded-full bg-white/5 p-1 backdrop-blur-lg',
           )}
         >
-          {navItems.map((navItem: NavItem) => {
+          {navList.map((navItem: NavItem) => {
             const { label, icon } = navItem;
             return (
               <Button
@@ -124,21 +91,28 @@ const Button = ({ label, icon: Icon, onClick, selected }: ButtonProps) => {
     <button
       onClick={onClick}
       className={cn(
-        'cursor-pointer appearance-none rounded-full px-3 pt-2 pb-1.5 transition-all duration-150 ease-out outline-none select-none hover:bg-neutral-500/50 active:bg-neutral-500/50 sm:px-4.5 sm:py-2.5',
-        selected === label ? 'bg-neutral-500/50' : '',
+        'group relative cursor-pointer appearance-none rounded-full px-3 pt-2 pb-1.5 transition-all duration-150 ease-out outline-none select-none sm:px-4 sm:py-2.5',
       )}
     >
-      <div className="flex flex-col items-center gap-0.5 sm:gap-1">
+      <div className="relative z-1 flex flex-col items-center gap-0.5 sm:gap-1">
         {Icon && (
           <Icon
             size={20}
             color="currentColor"
             weight={selected === label ? 'fill' : 'regular'}
-            className="size-6 fill-neutral-200"
+            className={cn(
+              'size-6 group-hover:fill-neutral-200',
+              selected === label ? 'fill-neutral-100' : 'fill-neutral-400',
+            )}
           />
         )}
-        <span className="text-xxs text-neutral-100 sm:text-xs">{label}</span>
       </div>
+      {selected === label && (
+        <motion.div
+          layoutId="btn"
+          className="absolute inset-0 size-full rounded-full bg-neutral-500/50"
+        ></motion.div>
+      )}
     </button>
   );
 };

@@ -1,10 +1,20 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-export const AppleCarousel = () => {
-  const carouselItems = [
+type CarouselProps = {
+  label: string;
+  description: string;
+  img: string;
+};
+
+export const AppleCarousel = ({
+  CarouselList,
+}: {
+  CarouselList?: CarouselProps[];
+}) => {
+  const DEMO_LIST: CarouselProps[] = [
     {
       label: 'iPhone 15 Pro',
       description: 'Beautiful and durable, by design.',
@@ -41,7 +51,9 @@ export const AppleCarousel = () => {
       img: '/img7.jpg',
     },
   ];
-
+  if (CarouselList === undefined) {
+    CarouselList = DEMO_LIST;
+  }
   const startEndInset =
     'pl-[max(1rem,calc((100vw-64rem)/2))] ' +
     'pr-[max(1rem,calc((100vw-64rem)/2))] ' +
@@ -60,7 +72,7 @@ export const AppleCarousel = () => {
       document.body.style.overflow = '';
     };
   }, [open]);
-
+  const container = useRef<HTMLDivElement>(null);
   return (
     <section className="font-inter relative w-full bg-white">
       <AnimatePresence mode="sync">
@@ -181,8 +193,8 @@ export const AppleCarousel = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
-                duration: 0.6,
-                ease: "easeInOut"
+              duration: 0.6,
+              ease: 'easeInOut',
             }}
             className="text-5xl font-semibold tracking-tight text-neutral-900"
           >
@@ -191,58 +203,62 @@ export const AppleCarousel = () => {
         </div>
 
         {/* Carousel */}
-        <div
-          className={cn(
-            `flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth py-2 select-none [&::-webkit-scrollbar]:hidden`,
-            startEndInset,
-          )}
-        >
-          {carouselItems.map((item, idx) => (
-            <motion.button
-              key={idx}
-              onClick={() => setOpen(true)}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                delay: 0.15 * idx,
-                duration: 0.6,
-                ease: "easeInOut"
-                // type: 'spring',
-                // stiffness: 100,
-                // damping: 36,
-              }}
-              className="relative flex h-148 w-82 shrink-0 cursor-pointer snap-start overflow-hidden rounded-4xl p-6 outline-none"
-            >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
+        <motion.div ref={container}>
+          <motion.div
+            drag="x"
+            dragConstraints={container}
+            className={cn(
+              `flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth py-2 select-none [&::-webkit-scrollbar]:hidden`,
+              startEndInset,
+            )}
+          >
+            {CarouselList.map((item, idx) => (
+              <motion.button
+                key={idx}
+                // onClick={() => setOpen(true)}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
                 transition={{
-                  duration: 0.25,
-                  ease: 'easeOut',
+                  delay: 0.15 * idx,
+                  duration: 0.6,
+                  ease: 'easeInOut',
+                  // type: 'spring',
+                  // stiffness: 100,
+                  // damping: 36,
                 }}
-                className="absolute inset-0"
+                className="relative flex h-148 w-82 shrink-0 cursor-grab snap-start overflow-hidden rounded-4xl p-6 outline-none active:cursor-grabbing"
               >
-                <img
-                  src={item.img}
-                  alt={item.label}
-                  className="size-full object-cover"
-                  draggable={false}
-                />
-              </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{
+                    duration: 0.25,
+                    ease: 'easeOut',
+                  }}
+                  className="absolute inset-0"
+                >
+                  <img
+                    src={item.img}
+                    alt={item.label}
+                    className="size-full object-cover"
+                    draggable={false}
+                  />
+                </motion.div>
 
-              <div className="pointer-events-none relative z-10 flex flex-col items-start gap-2 font-medium">
-                <h2 className="text-base text-white">{item.label}</h2>
+                <div className="pointer-events-none relative z-10 flex flex-col items-start gap-2 font-medium">
+                  <h2 className="text-base text-white">{item.label}</h2>
 
-                <p className="text-left text-2xl tracking-tight text-balance text-white">
-                  {item.description}
-                </p>
-              </div>
+                  <p className="text-left text-2xl tracking-tight text-balance text-white">
+                    {item.description}
+                  </p>
+                </div>
 
-              <div className="div-center absolute right-4 bottom-4 z-10 rounded-full bg-white p-1">
-                <Icon />
-              </div>
-            </motion.button>
-          ))}
-        </div>
+                <div className="div-center absolute right-4 bottom-4 z-10 rounded-full bg-white p-1">
+                  <Icon />
+                </div>
+              </motion.button>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

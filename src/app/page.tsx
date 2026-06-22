@@ -1,4 +1,5 @@
 import { AppleCarousel } from '@/components/appleCarousel';
+import { Bits } from '@/components/bits';
 import { Buttons } from '@/components/buttons';
 import { CreateCommunity } from '@/components/createCommunity';
 import { CursorFollow } from '@/components/cursorFollow';
@@ -20,8 +21,10 @@ import { Slider } from '@/components/slider';
 import { SubSelectToggle } from '@/components/subSelectToggle';
 import { Tooltip } from '@/components/tooltip';
 import { TooltipCard } from '@/components/tooltipCard';
+import { Form } from '@/ui/form';
 
 export default function Home() {
+
   return (
     <div className="div-center min-h-fit w-full flex-col gap-20 bg-gray-100 sm:h-dvh">
       {/* <SocialsMenu /> */}
@@ -48,12 +51,12 @@ export default function Home() {
       {/* <ShimmerTxt /> */}
       {/* <MeshGradient /> */}
       {/* <MotionExample /> */}
-      {/* <FrostedNav /> */}
+      {/* <FrostedNav  /> */}
       {/* <Slider /> */}
       {/* <LayoutCard /> */}
       {/* <SharedMenu />  */}
       {/* <Nav /> */}
-      {/* <AppleCarousel /> */}
+      <AppleCarousel />
       {/* <MagneticButton /> */}
       {/* <TooltipCard /> */}
       {/* <CursorFollow /> */}
@@ -66,7 +69,7 @@ export default function Home() {
       {/* <Showcase/> */}
       {/* <ReceiveButton/> */}
       {/* <CreateCommunity/> */}
-      <DragCards/>
+      {/* <DragCards/> */}
       {/* <SubSelectToggle /> */}
       {/* <InputBox/> */}
       {/* <ElasticSlider/> */}
