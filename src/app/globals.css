@@ -20,16 +20,16 @@
 }
 
 @theme inline {
-  --font-inter: var(--font-inter);
   --font-geist: var(--font-geist);
   --font-instrument: var(--font-instrument);
+  --font-inter: 'InterVariable', 'Inter', sans-serif;
 }
 
 @theme {
   --color-primary: var(--primary);
   --color-cursor: var(--cursor);
   --color-background: var(--background);
-  --font-inter: var(--font-inter);
+  --font-inter: 'InterVariable', 'Inter', sans-serif;
   --font-geistMono: var(--font-geistMono);
   --text-xxs: 10px;
   --text-xsm: 9px;

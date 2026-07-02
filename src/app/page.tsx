@@ -1,3 +1,4 @@
+import { AnimatedSVGHero } from '@/components/animatedSvgHero';
 import { AppleCarousel } from '@/components/appleCarousel';
 import { Bits } from '@/components/bits';
 import { Buttons } from '@/components/buttons';
@@ -19,9 +20,12 @@ import { ScrollSection } from '@/components/scrollSection';
 import { Showcase } from '@/components/showcase';
 import { Slider } from '@/components/slider';
 import { SubSelectToggle } from '@/components/subSelectToggle';
+import { SvgMorph } from '@/components/svgMorph';
+import { SvgX } from '@/components/svgX';
 import { Tooltip } from '@/components/tooltip';
 import { TooltipCard } from '@/components/tooltipCard';
 import { Form } from '@/ui/form';
+import { SvgYsh } from "@/components/svgYsh"
 
 export default function Home() {
 
@@ -56,7 +60,7 @@ export default function Home() {
       {/* <LayoutCard /> */}
       {/* <SharedMenu />  */}
       {/* <Nav /> */}
-      <AppleCarousel />
+      {/* <AppleCarousel /> */}
       {/* <MagneticButton /> */}
       {/* <TooltipCard /> */}
       {/* <CursorFollow /> */}
@@ -73,6 +77,11 @@ export default function Home() {
       {/* <SubSelectToggle /> */}
       {/* <InputBox/> */}
       {/* <ElasticSlider/> */}
+      {/* <SvgMorph /> */}
+      {/* <AnimatedSVGHero /> */}
+      {/* <SvgX /> */}
+      <SvgYsh />
     </div>
+
   );
 }

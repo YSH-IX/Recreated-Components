@@ -1,14 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Instrument_Serif, Inter } from 'next/font/google';
+import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { ThemeToggle } from '@/components/theme-toggle';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['400', '500', '600'],
-});
 
 const geist = Geist({
   subsets: ['latin'],
@@ -42,8 +36,12 @@ export default function RootLayout({
     <html
       suppressHydrationWarning
       lang="en"
-      className={`h-full antialiased ${inter.variable} ${geist.variable} ${instrument_Serif.variable} ${geistMono.variable}`}
+      className={`h-full antialiased ${geist.variable} ${instrument_Serif.variable} ${geistMono.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+      </head>
       <body className="relative flex min-h-full flex-col">
         <Providers>
           {children}
