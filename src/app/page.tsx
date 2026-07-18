@@ -26,6 +26,8 @@ import { Tooltip } from '@/components/tooltip';
 import { TooltipCard } from '@/components/tooltipCard';
 import { Form } from '@/ui/form';
 import { SvgYsh } from "@/components/svgYsh"
+import { GtaPosterIntro } from '@/components/gtaPosterIntro';
+import { FeyHero } from '@/components/feyHero';
 
 export default function Home() {
 
@@ -81,6 +83,9 @@ export default function Home() {
       {/* <AnimatedSVGHero /> */}
       {/* <SvgX /> */}
       <SvgYsh />
+      {/* <SvgYsh /> */}
+      {/* <GtaPosterIntro /> */}
+      <FeyHero />
     </div>
 
   );
