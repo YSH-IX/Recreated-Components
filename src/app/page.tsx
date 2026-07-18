@@ -25,11 +25,15 @@ import { SvgX } from '@/components/svgX';
 import { Tooltip } from '@/components/tooltip';
 import { TooltipCard } from '@/components/tooltipCard';
 import { Form } from '@/ui/form';
-import { SvgYsh } from "@/components/svgYsh"
+import { SvgYsh } from '@/components/svgYsh';
 import { GtaPosterIntro } from '@/components/gtaPosterIntro';
 import { FeyHero } from '@/components/feyHero';
+import { ScrollDemo } from '@/components/scrollDemo';
 
 export default function Home() {
+  const COPY =
+    'Get the best in class components, blocks & templates for your next SaaS Product.';
+  const WAVE_FACTOR = 0.3;
 
   return (
     <div className="div-center min-h-fit w-full flex-col gap-20 bg-gray-100 sm:h-dvh">
@@ -82,11 +86,11 @@ export default function Home() {
       {/* <SvgMorph /> */}
       {/* <AnimatedSVGHero /> */}
       {/* <SvgX /> */}
-      <SvgYsh />
+      {/* <SvgYsh /> */}
       {/* <SvgYsh /> */}
       {/* <GtaPosterIntro /> */}
-      <FeyHero />
+      {/* <FeyHero /> */}
+      <ScrollDemo COPY={COPY} WAVE_FACTOR={WAVE_FACTOR} />
     </div>
-
   );
 }
